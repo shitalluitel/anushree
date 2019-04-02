@@ -1,0 +1,83 @@
+{% extends 'adminlte/lib/_main_header.html' %}
+{% load adminlte_helpers i18n %}
+{% load staticfiles %}
+{% load notifications_tags %}
+
+{% block logo_text %}Library Management{% endblock %}
+
+{% block logo_text_small %}<b>LMS</b>{% endblock %}
+
+{% block nav_custom_menu %}
+    <div class="navbar-custom-menu">
+        <ul class="nav navbar-nav">
+            {% block header_dropdowns %}
+                {% if request.user.is_authenticated %}
+                    <li class="dropdown notifications-menu">
+                        <!-- Menu toggle button -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-bell-o"></i>
+                            <span class="label label-warning">{% live_notify_badge %}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        Notifications <strong>{% live_notify_badge %}</strong>
+                                    </div>
+                                    <div class="col-sm-6 text-right">
+                                        <a href="{% url 'notifications:mark_all_as_read' %}?next={% url 'notification_list' %}">
+                                            <small>Mark All as Read</small>
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                {% live_notify_list list_class="menu" %}
+                            </li>
+
+
+                            <li class="footer"><a href="{% url 'notification_list' %}">View all</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="{% static 'image/avatar.png' %}" class="user-image" alt="User Image">
+                            <span class="hidden-xs">{% firstof request.user.get_short_name request.user.get_username %}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {% block user_header %}
+                                <li class="user-header">
+                                    <img src="{% avatar_url size=180 %}" class="img-circle" alt="User Image">
+                                    <p>
+                                        {% firstof request.user.get_short_name request.user.get_username %}
+                                        <small>Member since {{ request.user.date_joined }}</small>
+                                    </p>
+
+                                </li>
+
+                            {% endblock %}
+
+                            <!-- Menu Footer-->
+                            {% block menu_footer %}
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="{% block change_password_url %}
+{% url 'users:user_password_change' %}
+{% endblock %}"
+                                           class="btn btn-default btn-flat">{% trans 'Change password' %}</a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="{% url 'users:logout_user' %}"
+                                           class="btn btn-default btn-flat">Sign out</a>
+                                    </div>
+                                </li>
+                            {% endblock %}
+
+                        </ul>
+                    </li>
+                {% endif %}
+            {% endblock header_dropdowns %}
+        </ul>
+    </div>
+{% endblock nav_custom_menu %}

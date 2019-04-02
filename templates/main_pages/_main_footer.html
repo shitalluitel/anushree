@@ -1,0 +1,18 @@
+{% extends 'adminlte/lib/_main_footer.html' %}
+
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        {% block footer_right %}
+            Developed By <b> <a href="http://shitalluitel.herokuapp.com" target="_blank">Shital Babu Luitel.</a></b>
+        {% endblock %}
+    </div>
+
+
+    {% block footer_left %}
+        {% block legal %}
+            <strong>Copyright &copy; {% now "Y" %}.
+            </strong> All rights
+            reserved.
+        {% endblock %}
+    {% endblock %}
+</footer>
