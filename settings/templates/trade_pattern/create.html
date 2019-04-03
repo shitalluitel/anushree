@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block page_name %}
+    Trade Pattern
+{% endblock %}
+
+{% block page_description %}
+    Create / Edit
+{% endblock %}
+
+{% block breadcrumbLink %}
+    <li>
+        <a href="{% url 'trade_pattern:list' %}" class="breadcrumb-item">Trade Pattern</a>
+
+    </li>
+    <li>
+        <a href="#" class="breadcrumb-item active">Create</a>
+    </li>
+{% endblock %}
+
+
+{% block body_content %}
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
+            <div class="panel">
+                <div class="panel-body">
+                    <form method="post">
+                        {% csrf_token %}
+
+                        <div class="form-group {% if form.trade_pattern.errors %} has-error {% endif %}">
+                            <label class="control-label" for="exampleInputEmail1">Trade Pattern</label>
+                            {{ form.trade_pattern }}
+                            {% if form.trade_pattern.errors %}
+                                <span id="helpBlock2" class="help-block">{{ form.code.errors }}</span>
+                            {% endif %}
+                        </div>
+
+
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

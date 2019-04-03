@@ -22,4 +22,13 @@ from django.conf.urls.static import static
 urlpatterns = [
                   url(r'^api/auth/', include('users.api.urls')),
                   url(r'^admin/', admin.site.urls),
+
+                  url(r'^users/', include('users.urls')),
+
+                  url(r'^settings/tire-design/', include('settings.urls.tire_design')),
+                  url(r'^settings/trade-mark/', include('settings.urls.trade_mark')),
+                  url(r'^settings/trade-pattern/', include('settings.urls.trade_pattern')),
+                  url(r'^settings/type/', include('settings.urls.type')),
+
+                  url('^inbox/notifications/', include('notifications.urls', namespace='notifications')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

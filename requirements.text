@@ -4,12 +4,14 @@ django-adminlte2==0.4.1
 django-environ==0.4.5
 django-filter==2.1.0
 django-model-utils==3.1.2
+django-notifications-hq==1.5.0
 django-stubs==0.11.1
 django-widget-tweaks==1.4.3
 djangorestframework==3.9.1
 djangorestframework-jwt==1.11.0
 djangorestframework-stubs==0.3.0
 gunicorn==19.9.0
+jsonfield==2.0.2
 mypy==0.670
 mypy-extensions==0.4.1
 psycopg2-binary==2.7.7

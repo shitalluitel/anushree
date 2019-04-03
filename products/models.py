@@ -3,6 +3,8 @@ import json
 from django.db import models
 
 # Create your models here.
+from categories.models import Category
+from settings.models import Type, TireDesign, TradePattern, TradeMark
 
 
 def get_document_filename(instance, filename):
@@ -26,10 +28,24 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=64)
-    price = models.DecimalField(max_digits=7, decimal_places=2)
-    image = models.FileField(upload_to=get_document_filename, verbose_name='SliderImage', )
-    description = models.TextField(max_length=252, null=True, blank=True)
+    type = models.ForeignKey(Type, related_name="products", on_delete=models.DO_NOTHING, null=True, blank=True)
+    tire_design = models.ForeignKey(TireDesign, related_name="products", on_delete=models.DO_NOTHING, null=True,
+                                    blank=True)
+    trade_pattern = models.ForeignKey(TradePattern, related_name="products", on_delete=models.DO_NOTHING, null=True,
+                                      blank=True)
+    trade_mark = models.ForeignKey(TradeMark, related_name="products", on_delete=models.DO_NOTHING, null=True,
+                                   blank=True)
+
+    certification = models.CharField(max_length=64, null=True, blank=True)
+    diameter = models.DecimalField(max_digits=2, decimal_places=2, null=True, blank=True)
+    origin = models.CharField(max_length=64, null=True, blank=True)
+    stock = models.PositiveIntegerField(default=1,)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+
+    # name = models.CharField(max_length=64)
+    # price = models.DecimalField(max_digits=7, decimal_places=2)
+    # image = models.FileField(upload_to=get_document_filename, verbose_name='SliderImage', )
+    # description = models.TextField(max_length=252, null=True, blank=True)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.DO_NOTHING)
 
     timestamp = models.DateField(auto_now_add=True)
