@@ -15,8 +15,8 @@ def create(request):
 
     if request.method == "POST":
         if form.is_valid():
-            course = form.save()
-            messages.success(request, "Successfully created '{}' course".format(course.name))
+            data = form.save()
+            messages.success(request, "Successfully created '{}' data".format(data))
             return redirect("type:create")
 
     context['form'] = form
@@ -35,8 +35,8 @@ def edit(request, pk):
 
     if request.method == "POST":
         if form.is_valid():
-            course = form.save()
-            messages.success(request, "Successfully updated '{}' course".format(course.name))
+            data = form.save()
+            messages.success(request, "Successfully updated '{}' data".format(data))
             return redirect("type:list")
 
     context['form'] = form
@@ -63,7 +63,7 @@ def delete(request, pk):
             messages.error(request, "Unable to find data that you have requested.")
             return redirect('type:list')
 
-        messages.success(request, "Successfully deleted {}.".format(data.name))
+        messages.success(request, "Successfully deleted {}.".format(data))
         return redirect('type:list')
 
     context['next'] = reverse('type`:list')

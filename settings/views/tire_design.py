@@ -15,8 +15,8 @@ def create(request):
 
     if request.method == "POST":
         if form.is_valid():
-            course = form.save()
-            messages.success(request, "Successfully created '{}' course".format(course.name))
+            type = form.save()
+            messages.success(request, "Successfully created '{}' type".format(type))
             return redirect("tire_design:create")
 
     context['form'] = form
@@ -35,8 +35,8 @@ def edit(request, pk):
 
     if request.method == "POST":
         if form.is_valid():
-            course = form.save()
-            messages.success(request, "Successfully updated '{}' course".format(course.name))
+            type = form.save()
+            messages.success(request, "Successfully updated '{}' type".format(type))
             return redirect("tire_design:list")
 
     context['form'] = form
@@ -63,7 +63,7 @@ def delete(request, pk):
             messages.error(request, "Unable to find data that you have requested.")
             return redirect('tire_design:list')
 
-        messages.success(request, "Successfully deleted {}.".format(data.name))
+        messages.success(request, "Successfully deleted {}.".format(data))
         return redirect('tire_design:list')
 
     context['next'] = reverse('tire_design`:list')

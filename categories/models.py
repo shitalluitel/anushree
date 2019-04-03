@@ -28,7 +28,7 @@ class CategoryManager(models.Manager):
 
 
 class Category(models.Model):
-    name = models.CharField(max_length=64)
+    name = models.CharField(max_length=64, unique=True)
     slugs = models.CharField(max_length=64, blank=True)
 
     timestamp = models.DateField(auto_now_add=True)

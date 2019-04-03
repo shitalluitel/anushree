@@ -5,19 +5,31 @@
 <li class="treeview">
     <a href="#">
         <i class="fa fa-user"></i>
-        <span>Student</span>
+        <span>Product</span>
         <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
     </a>
     <ul class="treeview-menu">
-        <li><a href="#"> <i class="fa fa-circle-o">Create</i></a></li>
-        {#            {% if perms.students.add_student %}#}
-        {#                <li><a href="{% url 'students:student_home' %}"><i class="fa fa-circle-o"></i> Create</a></li>#}
-        {#            {% endif %}#}
-        {#            {% if perms.students.view_student %}#}
-        {#                <li><a href="{% url 'students:list_student' %}"><i class="fa fa-circle-o"></i>View</a></li>#}
-        {#            {% endif %}#}
+        <li><a href="#"> <i class="fa fa-circle-o">&nbsp; List</i></a></li>
+    </ul>
+</li>
+
+
+<li class="treeview">
+    <a href="#">
+        <i class="fa fa-user"></i>
+        <span>Settings</span>
+        <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+    </a>
+    <ul class="treeview-menu">
+        <li><a href="{% url 'categories:list' %}"><i class="fa fa-circle-o">&nbsp; Category</i></a></li>
+        <li><a href="{% url 'tire_design:list' %}"> <i class="fa fa-circle-o">&nbsp; Tire Design</i></a></li>
+        <li><a href="{% url 'trade_mark:list' %}"> <i class="fa fa-circle-o">&nbsp; Trade Mark</i></a></li>
+        <li><a href="{% url 'trade_pattern:list' %}"> <i class="fa fa-circle-o">&nbsp; Trade Pattern</i></a></li>
+        <li><a href="{% url 'type:list' %}"> <i class="fa fa-circle-o">&nbsp; Type</i></a></li>
     </ul>
 </li>
 
