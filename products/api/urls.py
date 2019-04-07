@@ -1,8 +1,8 @@
 from django.conf.urls import url
-from products.api.views import ProductList
+from products.api.views import TireDetailView
 
-app_name = "products"
+app_name = "api_products"
 
 urlpatterns = [
-    url(r'^(?P<slug>[\w-]+)/$', ProductList.as_view(), name='api_list'),
+    url(r'^tube/(?P<pk>[\d]+)/$', TireDetailView.as_view(), name='api_list'),
 ]

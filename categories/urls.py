@@ -4,9 +4,9 @@ from . import views
 app_name = "categories"
 
 urlpatterns = [
-    url('^create/$', views.create, name="create"),
-    url('^$', views.list, name="list"),
-    url('^edit/(?P<pk>\d+)/$', views.edit, name="edit"),
-    url('^delete/(?P<pk>\d+)/$', views.delete, name="delete"),
-    url('^undo/(?P<pk>\d+)/$', views.delete, name="delete"),
+    url(r'^create/$', views.create, name="create"),
+    url(r'^$', views.list, name="list"),
+    url(r'^edit/(?P<slug>[\w-]+)/$', views.edit, name="edit"),
+    url(r'^delete/(?P<slug>[\w-]+)/$', views.delete, name="delete"),
+    url(r'^undo/(?P<slug>[\w-]+)/$', views.undo, name="undo"),
 ]

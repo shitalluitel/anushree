@@ -43,11 +43,6 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['*', 'localhost'])
 # Application definition
 
 INSTALLED_APPS = [
-    'notifications',
-    'django_adminlte',
-    'rest_framework',
-    'widget_tweaks',
-
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -55,9 +50,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'notifications',
+    'django_adminlte',
+    'rest_framework',
+    'widget_tweaks',
+
     'users',
     'settings',
     'categories',
+    'products',
+    'sliderimages',
+    'stocks',
 ]
 
 MIDDLEWARE = [

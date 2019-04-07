@@ -3,7 +3,7 @@
 
 
 {% block page_name %}
-    Tire Design
+    Category
 {% endblock %}
 
 {% block page_description %}
@@ -12,7 +12,7 @@
 
 {% block breadcrumbLink %}
     <li>
-        <a href="#" class="breadcrumb-item">Tire Design</a>
+        <a href="#" class="breadcrumb-item">Categories</a>
 
     </li>
 {% endblock %}
@@ -21,7 +21,8 @@
 
     <div class="pull-right">
         {#        <a href="{% url 'courses:create' %}" class="btn add-batch btn-sm btn-primary" style="margin-bottom: 10px;">Add New</a>#}
-        <a href="{% url 'tire_design:create' %}" class="btn add-batch btn-sm btn-primary" style="margin-bottom: 10px;">Add New</a>
+        <a href="{% url 'categories:create' %}" class="btn add-batch btn-sm btn-primary" style="margin-bottom: 10px;">Add
+            New</a>
     </div>
 
     <div class="row">
@@ -29,7 +30,8 @@
             <div class="box">
 
                 <div class="box-body">
-                    <table id="tire-design-list" class="table table-striped table-bordered" style="width:100%">
+                    <div class="table-responsive">
+                        <table id="tire-design-list" class="table table-striped table-bordered" style="width:100%">
                         <thead>
                         <tr>
                             <th>S.N.</th>
@@ -40,17 +42,19 @@
                         <tbody>
                         {% for data in datas %}
                             <tr>
-                                <th></th>
-                                <th>{{ data.name }}</th>
-                                <th>
-                                    <a href="{% url 'categories:edit' data.id %}" class="btn btn-primary">Edit</a>
-                                    <a href="{% url 'categories:edit' data.id %}" class="btn btn-danger">Delete</a>
-                                </th>
+                                <td></td>
+                                <td>{{ data.name }}</td>
+                                <td>
+                                    <a href="{% url 'categories:edit' data.slug %}"
+                                       class="btn  btn-xs btn-primary">Edit</a>
+                                    <a href="{% url 'categories:delete' data.slug %}" class="btn btn-xs  btn-danger">Delete</a>
+                                </td>
                             </tr>
                         {% endfor %}
 
                         </tbody>
                     </table>
+                    </div>
                 </div>
                 <!-- /.box-body -->
             </div>

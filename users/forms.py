@@ -76,12 +76,12 @@ class LoginForm(forms.Form):
     """
     username = forms.CharField(
         label='Email',
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter your username or email'}),
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username or Email'}),
     )
 
     password = forms.CharField(
         label='Password',
-        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Enter your password'}),
+        widget=forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Password'}),
         strip=False,
     )
 

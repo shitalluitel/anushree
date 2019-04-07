@@ -3,8 +3,13 @@ import json
 from django.db import models
 
 # Create your models here.
+from django.dispatch import receiver
+
+from anushree.slugify import unique_slug_generator
 from categories.models import Category
-from settings.models import Type, TireDesign, TradePattern, TradeMark
+
+
+# from settings.models import Type, TireDesign, TradePattern, TradeMark
 
 
 def get_document_filename(instance, filename):
@@ -28,53 +33,58 @@ class ProductManager(models.Manager):
 
 
 class Product(models.Model):
-    type = models.ForeignKey(Type, related_name="products", on_delete=models.DO_NOTHING, null=True, blank=True)
-    tire_design = models.ForeignKey(TireDesign, related_name="products", on_delete=models.DO_NOTHING, null=True,
-                                    blank=True)
-    trade_pattern = models.ForeignKey(TradePattern, related_name="products", on_delete=models.DO_NOTHING, null=True,
-                                      blank=True)
-    trade_mark = models.ForeignKey(TradeMark, related_name="products", on_delete=models.DO_NOTHING, null=True,
-                                   blank=True)
+    pattern_name = models.CharField(max_length=64, null=True, blank=True)
+    pattern_code = models.CharField(max_length=16, null=True, blank=True)
+    size = models.CharField(max_length=32)
 
-    certification = models.CharField(max_length=64, null=True, blank=True)
-    diameter = models.DecimalField(max_digits=2, decimal_places=2, null=True, blank=True)
-    origin = models.CharField(max_length=64, null=True, blank=True)
-    stock = models.PositiveIntegerField(default=1,)
+    pr = models.CharField(max_length=32, null=True, blank=True)
+    product_name = models.CharField(max_length=64, null=True, blank=True)
+    stock = models.PositiveIntegerField(default=1)
     price = models.DecimalField(max_digits=10, decimal_places=2)
 
-    # name = models.CharField(max_length=64)
-    # price = models.DecimalField(max_digits=7, decimal_places=2)
-    # image = models.FileField(upload_to=get_document_filename, verbose_name='SliderImage', )
-    # description = models.TextField(max_length=252, null=True, blank=True)
     category = models.ForeignKey(Category, related_name='products', on_delete=models.DO_NOTHING)
+    is_deleted = models.BooleanField(default=False)
+
+    slug = models.SlugField(unique=True, null=True, blank=True)
 
     timestamp = models.DateField(auto_now_add=True)
-    created_at = models.DateField(auto_now=True)
+    updated_at = models.DateField(auto_now=True)
 
     objects = ProductManager()
 
     def __str__(self):
-        return self.name
+        return self.product_name
 
     class Meta:
         db_table = 'products'
         verbose_name = 'Product'
         verbose_name_plural = 'Products'
+        unique_together = ('pattern_name', 'pattern_code', 'product_name')
 
     def serialize(self):
-        try:
-            image = self.image.name.split('/')[1]
-        except:
-            image = ""
-
         data = {
             "id": self.id,
-            "name": self.name,
-            "image": image,
-            "description": self.description,
+            "pattern_name": self.pattern_name,
+            "pattern_code": self.pattern_code,
+            "size": self.size,
+            "pr": self.pr,
+            "product_name": self.product_name,
+            "stock": self.stock,
             "price": float(self.price),
+            "category": self.category,
+            "is_deleted": self.is_deleted,
+            'created_at': self.timestamp,
             "error": False,
         }
 
         data = json.dumps(data)
         return data
+
+
+@receiver(models.signals.pre_save, sender=Product)
+def auto_slug_generator(sender, instance, **kwargs):
+    """
+    Creates a slug if there is no slug.
+    """
+    if not instance.slug:
+        instance.slug = unique_slug_generator(instance, new_slug=instance.product_name or instance.pattern_name)

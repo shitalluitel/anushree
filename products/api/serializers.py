@@ -2,15 +2,40 @@ from rest_framework import serializers
 
 from products.models import Product
 
+#
+# class TireSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = Product
+#
+#         fields = [
+#
+#         ]
 
-class ProductSerializer(serializers.ModelSerializer):
+
+class TubeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
 
         fields = [
-            'name',
+            'pattern_name',
+            'pattern_code',
+            'size',
+            # 'category',
+            # 'product_name',
+            'stock',
             'price',
-            'image',
-            'description',
-            'category'
+        ]
+
+
+class TireSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+
+        fields = [
+            'size',
+            'product_name',
+            # 'category',
+            'pr',
+            'stock',
+            'price',
         ]

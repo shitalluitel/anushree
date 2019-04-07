@@ -29,7 +29,9 @@ class CategoryManager(models.Manager):
 
 class Category(models.Model):
     name = models.CharField(max_length=64, unique=True)
-    slugs = models.CharField(max_length=64, blank=True)
+    slug = models.SlugField(unique=True, null=True, blank=True)
+
+    is_deleted = models.BooleanField(default=False)
 
     timestamp = models.DateField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
@@ -61,4 +63,4 @@ def slugify_name(sender, instance, **kwargs):
     Deletes document from documentsystem
     when corresponding `Mediadocument` object is deleted.
     """
-    instance.slugs = slugify(instance.name)
+    instance.slug = slugify(instance.name)

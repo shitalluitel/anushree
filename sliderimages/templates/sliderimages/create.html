@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block page_name %}
+    Slider Images
+{% endblock %}
+
+{% block page_description %}
+    Create / Edit
+{% endblock %}
+
+{% block breadcrumbLink %}
+    <li>
+        <a href="{% url 'sliderimages:list' %}" class="breadcrumb-item">Slider Image</a>
+
+    </li>
+    <li>
+        <a href="#" class="breadcrumb-item active">Create / Edit</a>
+    </li>
+{% endblock %}
+
+
+{% block body_content %}
+
+    <div class="panel">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+
+                        <div class="form-group {% if form.name.errors %} has-error {% endif %}">
+                            <label class="control-label" for="exampleInputEmail1">Name</label>
+                            {{ form.name }}
+                            {% if form.name.errors %}
+                                <span id="helpBlock2" class="help-block">{{ form.name.errors }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group {% if form.description.errors %} has-error {% endif %}">
+                            <label class="control-label" for="exampleInputEmail1">Description</label>
+                            {{ form.description }}
+                            {% if form.description.errors %}
+                                <span id="helpBlock2" class="help-block">{{ form.description.errors }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group {% if form.image.errors %} has-error {% endif %}">
+                            {% if form.image.value %}
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <label class="control-label" for="exampleInputEmail1">Image</label>
+                                        {{ form.image }}
+                                        {% if form.image.errors %}
+                                            <span id="helpBlock2" class="help-block">{{ form.image.errors }}</span>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <img src="/media/{{ form.image.value }}" style="width: 100%"
+                                             alt="{{ form.image.value }}">
+                                    </div>
+                                </div>
+                            {% else %}
+                                <label class="control-label" for="exampleInputEmail1">Image</label>
+                                {{ form.image }}
+                                {% if form.image.errors %}
+                                    <span id="helpBlock2" class="help-block">{{ form.image.errors }}</span>
+                                {% endif %}
+                            {% endif %}
+                        </div>
+
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary" value="Submit">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
