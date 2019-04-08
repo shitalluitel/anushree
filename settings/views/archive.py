@@ -39,4 +39,5 @@ def category_archive(request):
     datas = Category.objects.filter(is_deleted=True)
 
     context['datas'] = datas
+    context['archived'] = True
     return render(request, 'archive/category_list.html', context)

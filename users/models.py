@@ -80,11 +80,11 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
-    # def save(self, *args, **kwargs):
-    #     password = self.password
-    #     if not 'pbkdf2_sha256' in password:
-    #         self.set_password(self.password)
-    #     return super(User, self).save(*args, **kwargs)
+    def save(self, *args, **kwargs):
+        password = self.password
+        if not 'pbkdf2_sha256' in password:
+            self.set_password(self.password)
+        return super(User, self).save(*args, **kwargs)
 
     def get_full_name(self):
         return ' '.join([self.first_name, self.last_name])
@@ -97,7 +97,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         return self.created_at.date()
 
     def __str__(self):  # __unicode__ on Python 2
-        return self.email
+        return self.username
 
     def generate_confirmation_token(self):
         payload = {
@@ -124,9 +124,9 @@ class User(AbstractBaseUser, PermissionsMixin):
         # requests.post(settings.MAILGUN_SERVER,
         #               auth=("api", settings.MAILGUN_API_KEY),
         #               data=data)
-        print('http://localhost:8000/users/confirm_email?token={}'.format(token))
-
-        print('http://khaja.herokuapp.com/users/confirm_email?token={}'.format(token))
+        # print('http://localhost:8000/users/confirm_email?token={}'.format(token))
+        #
+        # print('http://khaja.herokuapp.com/users/confirm_email?token={}'.format(token))
 
         # for gmail mail confirmation api
         # email = EmailMessage('subject: Email Confirmation ', html, to=[self.email])
@@ -175,7 +175,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         permissions = (
             ('change_password', 'Can change password'),
         )
-
 
 # class Logs(models.Model):
 #     user = models.ForeignKey(User, related_name='logs', on_delete=models.DO_NOTHING)

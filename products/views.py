@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from categories.models import Category
-from products.forms import TubeForm, TireForm
+from products.forms import TubeForm, TireForm, TubeEditForm
 from products.models import Product
 
 
@@ -17,7 +17,7 @@ def tube_create(request):
             try:
                 category = Category.objects.get(name__icontains='tube', is_deleted=False)
             except Category.DoesNotExist as e:
-                messages.warning(request, e)
+                messages.warning(request, str(e))
                 return render(request, 'products/tube/create.html', context)
             tube = form.save(commit=False)
             tube.category = category
@@ -38,7 +38,7 @@ def tire_create(request):
             try:
                 category = Category.objects.get(name__icontains='tire', is_deleted=False)
             except Category.DoesNotExist as e:
-                messages.warning(request, e)
+                messages.warning(request, str(e))
                 return render(request, 'products/tire/create.html', context)
 
             tire = form.save(commit=False)
@@ -74,7 +74,6 @@ def tube_list(request):
     if category:
         messages.warning(request, 'Category for these data has been deleted or inactive.')
 
-
     context['datas'] = datas
     return render(request, 'products/tube/list.html', context)
 
@@ -84,10 +83,10 @@ def tube_edit(request, slug):
     try:
         data = Product.objects.get(slug=slug, category__name__icontains='tube')
     except Product.DoesNotExist as e:
-        messages.error(request, e)
+        messages.error(request, str(e))
         return redirect('products:tube_list')
 
-    form = TubeForm(request.POST or None, instance=data)
+    form = TubeEditForm(request.POST or None, instance=data)
     if request.method == "POST":
         if form.is_valid():
             form.save()
@@ -105,7 +104,7 @@ def tire_edit(request, slug):
     try:
         data = Product.objects.get(slug=slug, category__name__icontains='tire')
     except Product.DoesNotExist as e:
-        messages.error(request, e)
+        messages.error(request, str(e))
         return redirect('products:tire_list')
 
     form = TireForm(request.POST or None, instance=data)
@@ -136,7 +135,7 @@ def tube_delete(request, slug):
                 return redirect('products:tube_list')
 
         except Product.DoesNotExist as e:
-            messages.error(request, e)
+            messages.error(request, str(e))
             return redirect('products:tube_list')
 
     context['next'] = reverse('products:tube_list')
@@ -164,7 +163,7 @@ def tire_delete(request, slug):
                 return redirect('products:tire_list')
 
         except Product.DoesNotExist as e:
-            messages.error(request, e)
+            messages.error(request, str(e))
             return redirect('products:tire_list')
 
     context['next'] = reverse('archive:tire_archive')
@@ -188,7 +187,7 @@ def tube_undo(request, slug):
             return redirect('archive:tube_archive')
 
         except Product.DoesNotExist as e:
-            messages.error(request, e)
+            messages.error(request, str(e))
             return redirect('archive:tube_archive')
 
     context['next'] = reverse('archive:tube_archive')
@@ -212,7 +211,7 @@ def tire_undo(request, slug):
             return redirect('archive:tire_archive')
 
         except Product.DoesNotExist as e:
-            messages.error(request, e)
+            messages.error(request, str(e))
             return redirect('archive:tire_archive')
 
     context['next'] = reverse('archive:tire_archive')

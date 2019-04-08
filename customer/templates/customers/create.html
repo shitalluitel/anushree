@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block page_name %}
+    Slider Images
+{% endblock %}
+
+{% block page_description %}
+    Create / Edit
+{% endblock %}
+
+{% block breadcrumbLink %}
+    <li>
+        <a href="{% url 'sliderimages:list' %}" class="breadcrumb-item">Slider Image</a>
+
+    </li>
+    <li>
+        <a href="#" class="breadcrumb-item active">Create / Edit</a>
+    </li>
+{% endblock %}
+
+
+{% block body_content %}
+    {##}
+    {#    <div class="panel">#}
+    {#        <div class="panel-body">#}
+    {#            <div class="row">#}
+    {#                <div class="col-md-8 col-md-offset-2">#}
+    {#    <form #}
+
+
+    <div class="box box-info">
+        <div class="box-header with-border ">
+            <h3 class="box-title">Customer Form</h3>
+        </div>
+
+        <form class="form-horizontal" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="box-body">
+                <div class="form-group {% if form.owner.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.owner.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.owner }}
+                        {% if form.owner.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.owner.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group {% if form.company.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.company.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.company }}
+                        {% if form.company.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.company.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group {% if form.address.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.address.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.address }}
+                        {% if form.address.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.address.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group {% if form.mobile_no.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.mobile_no.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.mobile_no }}
+                        {% if form.mobile_no.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.mobile_no.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group {% if form.phone_no.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.phone_no.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.phone_no }}
+                        {% if form.phone_no.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.phone_no.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group {% if form.email.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.email.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.email.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <div class="form-group {% if form.pan_no.errors %} has-error {% endif %}">
+                    <label for="inputEmail3" class="col-sm-2 control-label">{{ form.pan_no.label }}</label>
+
+                    <div class="col-sm-10">
+                        {{ form.pan_no }}
+                        {% if form.pan_no.errors %}
+                            <span id="helpBlock2" class="help-block">{{ form.pan_no.errors }}</span>
+                        {% endif %}
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+            <div class="box-footer">
+                <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </div>
+            <!-- /.box-footer -->
+        </form>
+    </div>
+
+    {#    <div class="form-group">#}
+    {#        <input type="submit" class="btn btn-primary" value="Submit">#}
+    {#    </div>#}
+    {#    </form>#}
+    {#                </div>#}
+    {#            </div>#}
+    {#        </div>#}
+    {#    </div>#}
+{% endblock %}

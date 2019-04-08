@@ -4,7 +4,7 @@ from django.views.generic.base import View
 # from momohub.mixins import HttpResponseMixin
 from rest_framework import generics
 
-from products.api.serializers import TireSerializer
+from products.api.serializers import TireSerializer, TubeSerializer
 from products.models import Product
 
 
@@ -42,8 +42,9 @@ from products.models import Product
 class TireDetailView(generics.RetrieveAPIView):
     permission_classes = []
     authentication_classes = []
-    queryset = Product.objects.all()
+    queryset = Product.objects.filter(category__name__icontains='tire')
     serializer_class = TireSerializer
+
     # lookup_field = 'id'
 
     def get_object(self, *args, **kwargs):
@@ -52,3 +53,17 @@ class TireDetailView(generics.RetrieveAPIView):
         kw_id = kwargs.get('pk')
         return Product.objects.get(id=kw_id, is_deleted=False)
 
+
+class TubeDetailView(generics.RetrieveAPIView):
+    permission_classes = []
+    authentication_classes = []
+    queryset = Product.objects.filter(category__name__icontains='tube', )
+    serializer_class = TubeSerializer
+
+    # lookup_field = 'id'
+
+    def get_object(self, *args, **kwargs):
+        kwargs = self.kwargs
+
+        kw_id = kwargs.get('pk')
+        return Product.objects.get(id=kw_id, is_deleted=False)

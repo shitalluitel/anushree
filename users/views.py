@@ -65,7 +65,7 @@ def login_user(request):
             password = form.cleaned_data.get('password')
 
             user = authenticate(username=username, password=password)
-            if user is None:
+            if user is None or not user.is_active:
                 messages.error(request, "Invalid login credentials")
                 return render(request, 'users/login.html', context)
             else:

@@ -37,26 +37,23 @@
                                     <div class="panel-body">
                                         <table class="table table-striped">
                                             <tbody>
-                                            <tr>
-                                                <th>Product Name</th>
-                                                <td id="product_name">-</td>
-                                            </tr>
 
+                                            <tr>
+                                                <th>Pattern Name</th>
+                                                <td id="pattern_name">-</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Pattern Code</th>
+                                                <td id="pattern_code">-</td>
+                                            </tr>
                                             <tr>
                                                 <th>Size</th>
                                                 <td id="size">-</td>
                                             </tr>
-
-                                            <tr>
-                                                <th>PR</th>
-                                                <td id="pr">-</td>
-                                            </tr>
-
                                             <tr>
                                                 <th>Stock</th>
                                                 <td id="stock">-</td>
                                             </tr>
-
                                             <tr>
                                                 <th>Price</th>
                                                 <td id="price">-</td>
@@ -74,29 +71,7 @@
                                         <p style="font-weight: bold; font-size: 18px;">Stock Detail</p>
                                     </div>
                                     <div class="panel-body">
-
-                                        {#                                        <div class="form-group {% if fine_form.amount.errors %} has-error {% endif %}">#}
-                                        {#                                            <label class="control-label">{{ fine_form.amount.label }}</label>#}
-                                        {#                                            {{ fine_form.amount }}#}
-                                        {#                                            {% if fine_form.amount.errors %}#}
-                                        {#                                                <span class="help-block">#}
-                                        {#                                                    {{ fine_form.amount.errors }}#}
-                                        {#                                                </span>#}
-                                        {#                                            {% endif %}#}
-                                        {#                                        </div>#}
-                                        {##}
-                                        {#                                        <div class="form-group {% if fine_form.pay_amount.errors %} has-error {% endif %}">#}
-                                        {#                                            <label class="control-label">{{ fine_form.pay_amount.label }}</label>#}
-                                        {#                                            {{ fine_form.pay_amount }}#}
-                                        {#                                            {% if fine_form.pay_amount.errors %}#}
-                                        {#                                                <span class="help-block">#}
-                                        {#                                                    {{ fine_form.pay_amount.errors }}#}
-                                        {#                                                </span>#}
-                                        {#                                            {% endif %}#}
-                                        {#                                        </div>#}
-
                                         {{ form.as_p }}
-
                                     </div>
                                 </div>
 
@@ -128,7 +103,7 @@
 
             if (item != '') {
                 $.ajax({
-                    url: '/api/products/tire/' + item + '/',
+                    url: '/api/products/tube/' + item + '/',
                     error: function () {
                         console.log("error");
                     },

@@ -53,7 +53,7 @@ class Product(models.Model):
     objects = ProductManager()
 
     def __str__(self):
-        return self.product_name
+        return self.product_name or self.pattern_code
 
     class Meta:
         db_table = 'products'

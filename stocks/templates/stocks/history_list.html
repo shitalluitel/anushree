@@ -3,30 +3,29 @@
 
 
 {% block page_name %}
-    Category
+    Stock
 {% endblock %}
 
 {% block page_description %}
-    List
+    {{ category }} History
 {% endblock %}
 
 {% block breadcrumbLink %}
     <li>
-        <a href="#" class="breadcrumb-item">Categories</a>
-
+        <a href="javascript:void(0);" class="breadcrumb-item">Stock</a>
+    </li>
+    <li>
+        <a href="javascript:void(0);" class="breadcrumb-item">{{ category }} History</a>
     </li>
 {% endblock %}
 
 {% block body_content %}
 
-    {% if not archived %}
-        <div class="pull-right">
-            {#        <a href="{% url 'courses:create' %}" class="btn add-batch btn-sm btn-primary" style="margin-bottom: 10px;">Add New</a>#}
-            <a href="{% url 'categories:create' %}" class="btn add-batch btn-sm btn-primary"
-               style="margin-bottom: 10px;">Add
-                New</a>
-        </div>
-    {% endif %}
+    <div class="pull-right">
+        {#        <a href="{% url 'courses:create' %}" class="btn add-batch btn-sm btn-primary" style="margin-bottom: 10px;">Add New</a>#}
+        <a href="{% url 'stocks:add_tube_stock' %}" class="btn add-batch btn-sm btn-primary"
+           style="margin-bottom: 10px;">Update {{ category }} Stock</a>
+    </div>
 
     <div class="row">
         <div class="col-xs-12">
@@ -38,19 +37,34 @@
                             <thead>
                             <tr>
                                 <th>S.N.</th>
-                                <th>Category</th>
-                                <th>Action</th>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>User</th>
+                                <th>Updated At</th>
                             </tr>
                             </thead>
                             <tbody>
                             {% for data in datas %}
                                 <tr>
                                     <td></td>
-                                    <td>{{ data.name }}</td>
+
                                     <td>
-                                        <a href="{% url 'categories:undo' data.slug %}" class="btn btn-xs btn-primary">undo</a>
-                                        <a href="{% url 'categories:delete' data.slug %}" class="btn btn-xs btn-danger">Delete</a>
+                                        {{ data.item }}
                                     </td>
+
+                                    <td>
+                                        {{ data.quantity }}
+                                    </td>
+
+                                    <td>
+                                        {{ data.user.email }}
+                                    </td>
+
+                                    <td>
+                                        {{ data.created_at }}
+                                    </td>
+
+
                                 </tr>
                             {% endfor %}
 
