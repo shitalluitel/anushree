@@ -71,9 +71,9 @@ class Product(models.Model):
             "product_name": self.product_name,
             "stock": self.stock,
             "price": float(self.price),
-            "category": self.category,
+            "category": str(self.category),
             "is_deleted": self.is_deleted,
-            'created_at': self.timestamp,
+            'created_at': str(self.timestamp),
             "error": False,
         }
 

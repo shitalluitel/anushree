@@ -2,6 +2,7 @@ from rest_framework import serializers
 
 from products.models import Product
 
+
 #
 # class TireSerializer(serializers.ModelSerializer):
 #     class Meta:
@@ -35,6 +36,22 @@ class TireSerializer(serializers.ModelSerializer):
             'size',
             'product_name',
             # 'category',
+            'pr',
+            'stock',
+            'price',
+        ]
+
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product
+
+        fields = [
+            'pattern_name',
+            'pattern_code',
+            'size',
+            'size',
+            'product_name',
             'pr',
             'stock',
             'price',

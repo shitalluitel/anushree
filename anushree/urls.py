@@ -5,6 +5,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+                  url(r'', include('orders.api.urls')),
                   url(r'^api/auth/', include('users.api.urls')),
                   url(r'^admin/', admin.site.urls),
                   url(r'^archive/', include('settings.urls.archive')),
@@ -16,6 +17,8 @@ urlpatterns = [
                   url(r'^customers/', include('customer.urls')),
 
                   url('^inbox/notifications/', include('notifications.urls', namespace='notifications')),
+
+                  url(r'^order/', include('orders.urls')),
 
                   url(r'^products/', include('products.urls')),
 
