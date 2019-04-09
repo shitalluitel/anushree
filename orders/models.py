@@ -1,13 +1,12 @@
 import json
 
 from django.db import models
-from model_utils import Choices
+# from model_utils import Choices
 
 from anushree import settings
 
 # Create your models here.
 from products.models import Product
-
 
 # STATUS = Choices('new', 'confirmed', 'rejected')
 

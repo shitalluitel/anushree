@@ -5,6 +5,8 @@ from django.db import models
 from django.dispatch import receiver
 
 from users.models import User
+
+
 # from anushree import settings
 #
 # User = settings.AUTH_USER_MODEL
@@ -15,8 +17,8 @@ class Customer(models.Model):
     company = models.CharField(max_length=128)
     address = models.CharField(max_length=128)
     mobile_no = models.CharField(max_length=15)
-    phone_no = models.CharField(max_length=16)
-    email = models.EmailField()
+    phone_no = models.CharField(max_length=16, null=True, blank=True)
+    email = models.EmailField(null=True, blank=True)
     pan_no = models.CharField(max_length=16)
 
     user = models.OneToOneField(User, related_name='customer', on_delete=models.DO_NOTHING)

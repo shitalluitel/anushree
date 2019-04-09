@@ -3,7 +3,10 @@ import json
 from django.views.generic.base import View
 # from momohub.mixins import HttpResponseMixin
 from rest_framework import generics
+from rest_framework.authentication import SessionAuthentication
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissionsOrAnonReadOnly, DjangoObjectPermissions
 
+from anushree.permission import CustomObjectPermissions
 from products.api.serializers import TireSerializer, TubeSerializer
 from products.models import Product
 
@@ -39,9 +42,10 @@ from products.models import Product
 #         return self.render_to_response(json_data)
 
 
-class TireDetailView(generics.RetrieveAPIView):
-    permission_classes = []
-    authentication_classes = []
+class TireDetailView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [DjangoObjectPermissions]
+    authentication_classes = [SessionAuthentication]
+    # perms_map =
     queryset = Product.objects.filter(category__name__icontains='tire')
     serializer_class = TireSerializer
 
@@ -54,9 +58,9 @@ class TireDetailView(generics.RetrieveAPIView):
         return Product.objects.get(id=kw_id, is_deleted=False)
 
 
-class TubeDetailView(generics.RetrieveAPIView):
-    permission_classes = []
-    authentication_classes = []
+class TubeDetailView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [DjangoObjectPermissions]
+    authentication_classes = [SessionAuthentication]
     queryset = Product.objects.filter(category__name__icontains='tube', )
     serializer_class = TubeSerializer
 
@@ -67,3 +71,24 @@ class TubeDetailView(generics.RetrieveAPIView):
 
         kw_id = kwargs.get('pk')
         return Product.objects.get(id=kw_id, is_deleted=False)
+
+
+class TireListView(generics.ListCreateAPIView):
+    permission_classes = [DjangoObjectPermissions]
+    authentication_classes = [SessionAuthentication]
+    queryset = Product.objects.filter(category__name__icontains='tire')
+    serializer_class = TireSerializer
+
+
+class TubeListView(generics.ListCreateAPIView):
+    permission_classes = [DjangoObjectPermissions]
+    authentication_classes = [SessionAuthentication]
+    queryset = Product.objects.filter(category__name__icontains='tube', )
+    serializer_class = TubeSerializer
+
+
+# class TireListView(generics.ListCreateAPIView):
+#     permission_classes = [IsAuthenticated]
+#     authentication_classes = [SessionAuthentication]
+#     queryset = Product.objects.filter(category__name__icontains='tire')
+#     serializer_class = TireSerializer

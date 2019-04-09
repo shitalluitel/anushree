@@ -4,6 +4,7 @@ from django.db.models import Sum, F, FloatField
 # from django.views.generic.base import View
 from rest_framework import viewsets, serializers, status
 from rest_framework.decorators import list_route, action
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
 from anushree import settings
@@ -19,7 +20,7 @@ class CartViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows carts to be viewed or edited.
     """
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
 
@@ -80,7 +81,7 @@ class CartItemViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows cart items to be viewed or edited.
     """
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
     queryset = CartItem.objects.all()
     serializer_class = CartItemSerializer
 
@@ -89,7 +90,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows orders to be viewed or created.
     """
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
@@ -156,6 +157,6 @@ class OrderItemViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows order items to be viewed or edited.
     """
-    permission_classes = []
+    permission_classes = [IsAuthenticated]
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer

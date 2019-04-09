@@ -5,6 +5,8 @@ from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from notifications.signals import notify
+
 from orders.models import Order
 
 
@@ -18,25 +20,22 @@ def new_order_list(request):
 
 @permission_required('orders.add_order')
 def confirm_order(request, pk):
+    order = None
+
     try:
         order = Order.objects.get(pk=pk)
     except Exception as e:
         print(e)
-        messages.error(request, e)
+        messages.error(request, str(e))
 
     user = order.customer
-    try:
-        subject = 'Order Confirmed'
-        message = 'Your Order created at {} has been confirmed.'.format(order.created_at)
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = [user.email]
-        send_mail(subject, message, email_from, recipient_list)
-    except Exception as e:
-        messages.error(request, e)
-        return redirect('orders:new_order_list')
 
     order.status = 'confirmed'
     order.save()
+
+    notify.send(sender=request.user, recipient=user,
+                verb='Book order by ' + request.user.get_full_name(),
+                description="Your Order for product {} has been {}".format(order.id, order.status))
 
     messages.success(request, 'Order {} has been confirmed.'.format(order.id))
     return redirect('orders:new_order_list')
@@ -44,26 +43,26 @@ def confirm_order(request, pk):
 
 @permission_required('orders.add_order')
 def reject_order(request, pk):
+    order = None
+
     try:
         order = Order.objects.get(pk=pk)
     except Exception as e:
         print(e)
-        messages.error(request, e)
+        messages.error(request, str(e))
 
     user = order.customer
 
-    try:
-        subject = 'Order Rejected'
-        message = 'Your Order created at {} has been rejected.'.format(order.created_at)
-        email_from = settings.EMAIL_HOST_USER
-        recipient_list = [user.email]
-        send_mail(subject, message, email_from, recipient_list)
-    except Exception as e:
-        messages.error(request, e)
-        return redirect('orders:new_order_list')
+    notify.send(sender=request.user, recipient=user,
+                verb='Book order by ' + request.user.get_full_name(),
+                description="".format())
 
     order.status = 'rejected'
     order.save()
+
+    notify.send(sender=request.user, recipient=user,
+                verb='Book order by ' + request.user.get_full_name(),
+                description="Your Order for product {} has been {}".format(order.id, order.status))
 
     messages.warning(request, 'Order {} has been rejected.'.format(order.id))
     return redirect('orders:new_order_list')

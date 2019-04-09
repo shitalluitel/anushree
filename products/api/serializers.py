@@ -3,21 +3,12 @@ from rest_framework import serializers
 from products.models import Product
 
 
-#
-# class TireSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Product
-#
-#         fields = [
-#
-#         ]
-
-
 class TubeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
 
         fields = [
+            'id',
             'pattern_name',
             'pattern_code',
             'size',
@@ -27,12 +18,15 @@ class TubeSerializer(serializers.ModelSerializer):
             'price',
         ]
 
+        extra_kwargs = {'password': {'read_only': True}}
+
 
 class TireSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
 
         fields = [
+            'id',
             'size',
             'product_name',
             # 'category',
@@ -40,6 +34,8 @@ class TireSerializer(serializers.ModelSerializer):
             'stock',
             'price',
         ]
+
+        extra_kwargs = {'password': {'read_only': True}}
 
 
 class ProductSerializer(serializers.ModelSerializer):

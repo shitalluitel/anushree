@@ -23,7 +23,7 @@ class CustomerForm(forms.ModelForm):
             'company': forms.TextInput(attrs={'class': 'form-control'}),
             'address': forms.TextInput(attrs={'class': 'form-control'}),
             'mobile_no': forms.TextInput(attrs={'class': 'form-control'}),
-            'phone_no': forms.TextInput(attrs={'class': 'form-control'}),
+            'phone_no': forms.TextInput(attrs={'class': 'form-control', 'required': False}),
             'email': forms.TextInput(attrs={'class': 'form-control'}),
             'pan_no': forms.TextInput(attrs={'class': 'form-control'}),
         }
@@ -37,6 +37,12 @@ class CustomerForm(forms.ModelForm):
             'email': 'Email',
             'pan_no': 'PAN Number',
         }
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.fields['phone_no'].required = False
+        self.fields['email'].required = False
 
 
 class ChangePasswordForm(forms.Form):
