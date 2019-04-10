@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
-
+{% load has_group %}
 
 {% block page_name %}
     Product
@@ -32,50 +32,78 @@
                 <div class="box-body">
                     <div class="table-responsive">
                         <table id="tire-design-list" class="table table-striped table-bordered" style="width:100%">
-                        <thead>
-                        <tr>
-                            <th>
-                                S.N.
-                            </th>
-
-                            <th>
-                                Product Name
-                            </th>
-
-                            <th>
-                                Price
-                            </th>
-
-                            <th>
-                                PR
-                            </th>
-
-                            <th>
-                                Stock
-                            </th>
-
-                            <th>
-                                Action
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {% for data in datas %}
+                            <thead>
                             <tr>
-                                <td></td>
-                                <td>{{ data.product_name }}</td>
-                                <td>{{ data.price }}</td>
-                                <td>{{ data.pr }}</td>
-                                <td>{{ data.stock }}</td>
-                                <td>
-                                    <a href="{% url 'products:tire_edit' data.slug %}" class="btn btn-xs btn-primary">Edit</a>
-                                    <a href="{% url 'products:tire_delete' data.slug %}" class="btn btn-xs btn-danger">Delete</a>
-                                </td>
-                            </tr>
-                        {% endfor %}
+                                <th>
+                                    S.N.
+                                </th>
 
-                        </tbody>
-                    </table>
+                                <th>
+                                    Product Name
+                                </th>
+
+                                <th>
+                                    Price
+                                </th>
+
+                                <th>
+                                    PR
+                                </th>
+
+                                <th>
+                                    Stock
+                                </th>
+
+                                {% if request.user|has_group:'customer' %}
+
+                                    <th>Quantity</th>
+
+                                {% endif %}
+
+                                <th>
+                                    Action
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for data in datas %}
+                                <tr>
+                                    <td></td>
+                                    <td>{{ data.product_name }}</td>
+                                    <td>{{ data.price }}</td>
+                                    <td>{{ data.pr }}</td>
+                                    <td>{{ data.stock }}</td>
+
+                                    {% if request.user|has_group:'customer' %}
+                                        {% if not data  in request.user.cart.items %}
+                                            <td><input type="number" id="quantity" name="quantity" min="1"
+                                                       style="width: 50px;" value="1"></td>
+                                        {% endif %}
+                                    {% endif %}
+
+                                    <td>
+
+                                        {% if request.user|has_group:'admin' or request.user.is_superuser %}
+                                            <a href="{% url 'products:tire_edit' data.slug %}"
+                                               class="btn btn-xs btn-primary">Edit</a>
+                                            <a href="{% url 'products:tire_delete' data.slug %}"
+                                               class="btn btn-xs btn-danger">Delete</a>
+                                        {% else %}
+                                            {% if data in request.user.cart.items %}
+                                                <a href="javascript:void(0);"
+                                                   class="btn btn-xs btn-danger">Remove From Cart</a>
+                                            {% else %}
+                                                <a href="javascript:void(0);"
+                                                   class="btn btn-xs btn-primary">Add To Cart</a>
+                                            {% endif %}
+
+                                        {% endif %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <!-- /.box-body -->
@@ -83,10 +111,6 @@
             <!-- /.box -->
         </div>
     </div>
-
-
-
-
 {% endblock %}
 
 {% block extra_stylesheets %}

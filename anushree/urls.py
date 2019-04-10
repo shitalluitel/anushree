@@ -5,7 +5,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-                  url(r'', include('orders.api.urls')),
+                  url(r'^api/', include('orders.api.urls')),
+
+                  url(r'^', include('pages.urls')),
+
                   url(r'^api/auth/', include('users.api.urls')),
                   url(r'^admin/', admin.site.urls),
                   url(r'^archive/', include('settings.urls.archive')),
