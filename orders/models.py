@@ -8,6 +8,7 @@ from anushree import settings
 # Create your models here.
 from products.models import Product
 
+
 # STATUS = Choices('new', 'confirmed', 'rejected')
 
 
@@ -51,7 +52,7 @@ class CartItem(models.Model):
     quantity = models.PositiveIntegerField(default=1, null=True, blank=True)
 
     def __str__(self):
-        return '%s: %s' % (self.product.name, self.quantity)
+        return '%s: %s' % (self.product.product_name or self.product.pattern_code, self.quantity)
 
 
 class OrderQuerySet(models.QuerySet):

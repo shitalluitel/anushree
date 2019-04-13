@@ -5,6 +5,7 @@ from django.db.models import Sum, F, FloatField
 from rest_framework import viewsets, serializers, status
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.decorators import list_route, action
+# from rest_framework.permissions import
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
@@ -22,13 +23,16 @@ class CartViewSet(viewsets.ModelViewSet):
     API endpoint that allows carts to be viewed or edited.
     """
     permission_classes = [IsAuthenticated]
-    authentication_classes = [SessionAuthentication]
+    # authentication_classes = [SessionAuthentication]
+    # authentication_classes = []
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
 
     @action(methods=['post', 'put'], detail=False)
     def add_to_cart(self, request, pk=None):
         cart, cart_new = Cart.objects.get_or_create(customer=request.user)
+
+
 
         try:
             product = Product.objects.get(
@@ -84,7 +88,8 @@ class CartItemViewSet(viewsets.ModelViewSet):
     API endpoint that allows cart items to be viewed or edited.
     """
     permission_classes = [IsAuthenticated]
-    authentication_classes = [SessionAuthentication]
+    # authentication_classes = [SessionAuthentication]
+    # authentication_classes = []
     queryset = CartItem.objects.all()
     serializer_class = CartItemSerializer
 
@@ -94,7 +99,8 @@ class OrderViewSet(viewsets.ModelViewSet):
     API endpoint that allows orders to be viewed or created.
     """
     permission_classes = [IsAuthenticated]
-    authentication_classes = [SessionAuthentication]
+    # authentication_classes = [SessionAuthentication]
+    # authentication_classes = []
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
@@ -151,7 +157,7 @@ class OrderViewSet(viewsets.ModelViewSet):
     @list_route(url_path="history")
     def order_history(self, request):
         user = request.user
-        orders = Order.objects.filter(customer=user).serialize()
+        orders = Order.objects.filter(customer=user.id).serialize()
         # serializer = OrderSerializer(orders, many=True)
         serializers = json.loads(orders)
         return Response(serializers)
@@ -162,6 +168,7 @@ class OrderItemViewSet(viewsets.ModelViewSet):
     API endpoint that allows order items to be viewed or edited.
     """
     permission_classes = [IsAuthenticated]
-    authentication_classes = [SessionAuthentication]
+    # authentication_classes = [SessionAuthentication]
+    authentication_classes = []
     queryset = OrderItem.objects.all()
     serializer_class = OrderItemSerializer

@@ -15,42 +15,44 @@
         <li><a href="{% url 'products:tire_list' %}"> <i class="fa fa-circle-o">&nbsp; Tire List</i></a></li>
     </ul>
 </li>
+{% if request.user|has_group:'admin' or request.user.is_superuser %}
 
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-database"></i>
-        <span>Stock</span>
-        <span class="pull-right-container">
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-database"></i>
+            <span>Stock</span>
+            <span class="pull-right-container">
           <i class="fa fa-angle-left pull-right"></i>
         </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a href="{% url 'stocks:create_home' %}"> <i class="fa fa-circle-o">&nbsp; Update</i></a></li>
-        <li><a href="{% url 'stocks:history_home' %}"> <i class="fa fa-circle-o">&nbsp; History</i></a></li>
-    </ul>
-</li>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{% url 'stocks:create_home' %}"> <i class="fa fa-circle-o">&nbsp; Update</i></a></li>
+            <li><a href="{% url 'stocks:history_home' %}"> <i class="fa fa-circle-o">&nbsp; History</i></a></li>
+        </ul>
+    </li>
 
 
-<li class="treeview">
-    <a href="#">
-        <i class="fa fa-cogs"></i>
-        <span>Settings</span>
-        <span class="pull-right-container">
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-cogs"></i>
+            <span>Settings</span>
+            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-    </a>
-    <ul class="treeview-menu">
-        <li><a href="{% url 'categories:list' %}"><i class="fa fa-circle-o">&nbsp; Category</i></a></li>
-        <li><a href="{% url 'customers:list_customer' %}"><i class="fa fa-circle-o">&nbsp; Customer</i></a></li>
-{#        <li><a href="{% url 'archive:home' %}"> <i class="fa fa-circle-o">&nbsp; Archive</i></a></li>#}
-        <li><a href="{% url 'sliderimages:list' %}"> <i class="fa fa-circle-o">&nbsp; SliderImage</i></a></li>
-    </ul>
-</li>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="{% url 'categories:list' %}"><i class="fa fa-circle-o">&nbsp; Category</i></a></li>
+            <li><a href="{% url 'customers:list_customer' %}"><i class="fa fa-circle-o">&nbsp; Customer</i></a></li>
+            {#        <li><a href="{% url 'archive:home' %}"> <i class="fa fa-circle-o">&nbsp; Archive</i></a></li>#}
+            <li><a href="{% url 'sliderimages:list' %}"> <i class="fa fa-circle-o">&nbsp; SliderImage</i></a></li>
+        </ul>
+    </li>
 
 
-<li class="treeview">
-    <a href="{% url 'archive:home' %}">
-        <i class="fa fa-archive"></i>
-        <span>Archived Records</span>
-    </a>
-</li>
+    <li class="treeview">
+        <a href="{% url 'archive:home' %}">
+            <i class="fa fa-archive"></i>
+            <span>Archived Records</span>
+        </a>
+    </li>
+{% endif %}

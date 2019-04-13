@@ -75,14 +75,28 @@
                                     </td>
 
 
-                                    <td>
-                                        {% if request.user|has_group:'customer' %}
+
+                                    {% if request.user|has_group:'customer' %}
+                                        <td>
                                             {% if not data in request.user.cart.items %}
-                                                <input type="number" class="quantity" name="quantity" min="1"
-                                                       style="width: 50px;" value="1">
+                                                <form action="
+                                                        {% if data in cart_item %} {% url 'orders:remove_from_cart' %} {% else %} {% url 'orders:add_to_cart' %} {% endif %}"
+                                                      method="post" class="cart-form">
+                                                    {% if not data in cart_item %}
+                                                        <input type="number" class="quantity" name="quantity" min="1"
+                                                               style="width: 50px;" value="1">
+                                                    {% else %}
+                                                        <input type="number" disabled="disabled" class="disabled"
+                                                               min="1"
+                                                               style="width: 50px;" value="1">
+                                                    {% endif %}
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="product_id" value="{{ data.id }}">
+                                                </form>
                                             {% endif %}
-                                        {% endif %}
-                                    </td>
+                                        </td>
+                                    {% endif %}
+
 
 
                                     <td>
@@ -92,7 +106,7 @@
                                             <a href="{% url 'products:tube_delete' data.slug %}"
                                                class="btn btn-danger btn-xs">Delete</a>
                                         {% else %}
-                                            {% if data in request.user.cart.items %}
+                                            {% if data in cart_item %}
                                                 <a href="javascript:void(0);"
                                                    class="btn btn-xs btn-danger remove-from-cart">Remove From Cart</a>
                                             {% else %}
@@ -148,10 +162,12 @@
 
         $('body').on('click', '.add-to-cart', function () {
             var atb_btn = $(this);
-            var quantity = atb_btn.closest('tr').find('.quantity').val();
-            var product_id = atb_btn.attr('id');
+            atb_btn.closest('tr').find('.cart-form').submit();
+        });
 
-
+        $('body').on('click', '.remove-from-cart', function () {
+            var atb_btn = $(this);
+            atb_btn.closest('tr').find('.cart-form').submit();
         });
 
     </script>

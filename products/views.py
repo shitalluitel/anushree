@@ -49,6 +49,7 @@ def tire_create(request):
             # return redirect('')
 
     context['form'] = form
+
     return render(request, 'products/tire/create.html', context)
 
 
@@ -62,6 +63,10 @@ def tire_list(request):
         messages.warning(request, 'Category for these data has been deleted or inactive.')
 
     context['datas'] = datas
+    if not request.user.groups == 'admin':
+        product_detail = request.user.cart.items.all()
+        items = ([x.product for x in product_detail])
+        context['cart_item'] = items
     return render(request, 'products/tire/list.html', context)
 
 
@@ -75,6 +80,12 @@ def tube_list(request):
         messages.warning(request, 'Category for these data has been deleted or inactive.')
 
     context['datas'] = datas
+
+    if not request.user.groups == 'admin':
+        product_detail = request.user.cart.items.all()
+        items = ([x.product for x in product_detail])
+        context['cart_item'] = items
+
     return render(request, 'products/tube/list.html', context)
 
 

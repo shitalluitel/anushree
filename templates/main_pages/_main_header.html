@@ -2,7 +2,7 @@
 {% load adminlte_helpers i18n %}
 {% load staticfiles %}
 {% load notifications_tags %}
-
+{% load has_group %}
 {% block logo_text %}AnuShree Traders{% endblock %}
 
 {% block logo_text_small %}<b>AST</b>{% endblock %}
@@ -25,8 +25,8 @@
                                         Notifications <strong>{% live_notify_badge %}</strong>
                                     </div>
                                     <div class="col-sm-6 text-right">
-{#                                        <a href="{% url 'notifications:mark_all_as_read' %}?next={% url 'notification_list' %}">#}
-{#                                            <small>Mark All as Read</small>#}
+                                        {#                                        <a href="{% url 'notifications:mark_all_as_read' %}?next={% url 'notification_list' %}">#}
+                                        {#                                            <small>Mark All as Read</small>#}
                                         </a>
                                     </div>
                                 </div>
@@ -37,9 +37,20 @@
 
 
                             <li class="footer"><a href="#">View all</a></li>
-{#                            <li class="footer"><a href="{% url 'notification_list' %}">View all</a></li>#}
+                            {#                            <li class="footer"><a href="{% url 'notification_list' %}">View all</a></li>#}
                         </ul>
                     </li>
+
+                    {% if not request.user|has_group:'admin' and not request.user.is_superuser %}
+                        <li class="dropdown notifications-menu">
+                            <!-- Menu toggle button -->
+                            <a href="{% url 'orders:cart_home' %}">
+                                <i class="fa fa-shopping-cart"></i>
+
+                            </a>
+
+                        </li>
+                    {% endif %}
 
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
