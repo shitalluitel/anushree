@@ -1,14 +1,17 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import permission_required, login_required
+from django.contrib.auth.models import Group
 from django.core.mail import send_mail
+from django.db import transaction
 from django.shortcuts import render, redirect
 
 # Create your views here.
 from notifications.signals import notify
 
-from orders.models import Order, Cart, CartItem
+from orders.models import Order, Cart, CartItem, OrderItem
 from products.models import Product
+from django.db.models import Sum, F, FloatField
 
 
 @permission_required('orders.add_order')
@@ -75,9 +78,7 @@ def cart_home(request):
 
     user = request.user
     cart_items = user.cart.items.all()
-    print(cart_items)
     context['cart_items'] = cart_items
-    print(context)
     return render(request, 'orders/cart_display.html', context)
 
 
@@ -153,4 +154,63 @@ def destroy_cart(request):
         item.delete()
 
     messages.success(request, "Successfully destroyed cart.")
+    return redirect('orders:cart_home')
+
+
+@login_required
+@transaction.atomic
+def order_create(request):
+    user = request.user
+
+    cart_items = user.cart.items.all()
+
+    for cart_item in cart_items:
+        if cart_item.product.stock - cart_item.quantity < 0:
+            messages.error(request, 'We do not have enough stock of ' + str(cart_item.product) + \
+                           'to complete your purchase. Sorry, we will restock soon')
+            return redirect('orders:cart_home')
+
+    if cart_items.count() == 0:
+        messages.error(request, 'Your Cart is empty')
+        return redirect('orders:cart_home')
+
+    try:
+        total_aggregated_dict = cart_items.aggregate(
+            total=Sum(F('quantity') * F('product__price'), output_field=FloatField()))
+
+        order_total = round(total_aggregated_dict['total'], 2)
+        order = Order(customer=user, total=order_total)
+        order.save()
+
+        print(order)
+    except Exception as e:
+        print(e)
+        messages.error(request, str(e))
+        return redirect('orders:cart_home')
+
+    order_items = []
+    try:
+        for cart_item in cart_items:
+            order_items.append(OrderItem(order=order, product=cart_item.product, quantity=cart_item.quantity))
+
+            # available_inventory should decrement by the appropriate amount
+            cart_item.product.stock -= cart_item.quantity
+            cart_item.product.save()
+
+            cart_item.delete()
+
+            # order_item.save()
+
+        OrderItem.objects.bulk_create(order_items)
+
+        group = Group.objects.get(name__icontaions='admin')
+        notify.send(sender=request.user, recipient=group,
+                    verb='Order for Items by {}'.format(user.get_full_name()),
+                    description="{} ordered for {} items.".format(user.get_full_name(),
+                                                                  user.cart.items.all().count()))
+
+    except Exception as e:
+        print(e)
+        messages.error(request, str(e))
+
     return redirect('orders:cart_home')

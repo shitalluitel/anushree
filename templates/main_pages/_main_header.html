@@ -46,7 +46,7 @@
                             <!-- Menu toggle button -->
                             <a href="{% url 'orders:cart_home' %}">
                                 <i class="fa fa-shopping-cart"></i>
-
+                                <span class="label label-warning">{{ request.cart_items_count }}</span>
                             </a>
 
                         </li>

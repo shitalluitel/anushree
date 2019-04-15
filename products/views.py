@@ -55,6 +55,7 @@ def tire_create(request):
 
 def tire_list(request):
     context = {}
+    user = request.user
     datas = Product.objects.filter(category__name__icontains="tire", is_deleted=False)
 
     category = datas.first().category.is_deleted
@@ -63,8 +64,8 @@ def tire_list(request):
         messages.warning(request, 'Category for these data has been deleted or inactive.')
 
     context['datas'] = datas
-    if not request.user.groups == 'admin':
-        product_detail = request.user.cart.items.all()
+    if not user.groups.name == 'admin' and not user.is_superuser:
+        product_detail = user.cart.items.all()
         items = ([x.product for x in product_detail])
         context['cart_item'] = items
     return render(request, 'products/tire/list.html', context)
@@ -72,6 +73,7 @@ def tire_list(request):
 
 def tube_list(request):
     context = {}
+    user = request.user
     datas = Product.objects.filter(category__name__icontains="tube", is_deleted=False)
 
     category = datas.first().category.is_deleted
@@ -81,8 +83,8 @@ def tube_list(request):
 
     context['datas'] = datas
 
-    if not request.user.groups == 'admin':
-        product_detail = request.user.cart.items.all()
+    if not user.groups.name == 'admin' and not user.is_superuser:
+        product_detail = user.cart.items.all()
         items = ([x.product for x in product_detail])
         context['cart_item'] = items
 

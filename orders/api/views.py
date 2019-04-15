@@ -1,7 +1,9 @@
 import json
 
+from django.contrib.auth.models import Group
 from django.db.models import Sum, F, FloatField
 # from django.views.generic.base import View
+from notifications.signals import notify
 from rest_framework import viewsets, serializers, status
 from rest_framework.authentication import SessionAuthentication
 from rest_framework.decorators import list_route, action
@@ -31,8 +33,6 @@ class CartViewSet(viewsets.ModelViewSet):
     @action(methods=['post', 'put'], detail=False)
     def add_to_cart(self, request, pk=None):
         cart, cart_new = Cart.objects.get_or_create(customer=request.user)
-
-
 
         try:
             product = Product.objects.get(
@@ -145,6 +145,7 @@ class OrderViewSet(viewsets.ModelViewSet):
             return Response({'error': e})
 
     def create(self, request, *args, **kwargs):
+        user = request.user
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
@@ -152,6 +153,11 @@ class OrderViewSet(viewsets.ModelViewSet):
             headers = self.get_success_headers(serializer.data)
             return Response({'error': False}, status=status.HTTP_201_CREATED, headers=headers)
         except Exception as e:
+            group = Group.objects.get(name__icontaions='admin')
+            notify.send(sender=request.user, recipient=group,
+                        verb='Order for Items by {}'.format(user.get_full_name()),
+                        description="{} ordered for {} items.".format(user.get_full_name(),
+                                                                      user.cart.items.all().count()))
             return Response({'error': True}, status=status.HTTP_400_BAD_REQUEST)
 
     @list_route(url_path="history")

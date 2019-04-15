@@ -54,6 +54,14 @@ class CartItem(models.Model):
     def __str__(self):
         return '%s: %s' % (self.product.product_name or self.product.pattern_code, self.quantity)
 
+    @staticmethod
+    def get_items_count(request):
+        user = request.user
+        if user.is_authenticated and not user.is_superuser and not user.groups.name == 'admin':
+            count = user.cart.items.all().count()
+            return count
+        return None
+
 
 class OrderQuerySet(models.QuerySet):
 
