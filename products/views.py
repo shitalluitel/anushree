@@ -233,3 +233,7 @@ def tire_undo(request, slug):
     context['status'] = 'Undo'
 
     return render(request, 'snippets/delete.html', context)
+
+
+def product_home(request):
+    return render(request, 'products/product_home.html')

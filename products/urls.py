@@ -15,4 +15,6 @@ urlpatterns = [
     url(r'^tube/edit/(?P<slug>[\w-]+)/$', views.tube_edit, name="tube_edit"),
     url(r'^tube/delete/(?P<slug>[\w-]+)/$', views.tube_delete, name="tube_delete"),
     url(r'^tube/undo/(?P<slug>[\w-]+)/$', views.tube_undo, name="tube_undo"),
+
+    url(r'^home/$', views.product_home, name='product_home'),
 ]
