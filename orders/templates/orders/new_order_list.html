@@ -28,6 +28,7 @@
                             <th style="width: 5%">S.N.</th>
                             <th>Order ID</th>
                             <th>Customer</th>
+                            <th>Address</th>
                             <th>Ordered At</th>
                             <th>Total</th>
                             <th></th>
@@ -37,8 +38,10 @@
                         {% for data in orders %}
                             <tr>
                                 <td></td>
-                                <td>{{ data.id }}</td>
-                                <td>{{ data.customer.full_name }}</td>
+                                <td><a href="javascript:void(0);" id="{{ data.id }}" class="order-detail">{{ data.id }}</a></td>
+                                <td><a href="javascript:void(0);" id="{{ data.customer.customer.id }}"
+                                       class="customer-detail">{{ data.customer.customer.owner }}</a></td>
+                                <td>{{ data.customer.customer.address }}</td>
                                 <td>
                                     {{ data.created_at }}
                                 </td>
@@ -62,6 +65,25 @@
                 <!-- /.box-body -->
             </div>
             <!-- /.box -->
+        </div>
+    </div>
+
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                        </div>
+                        <div class="modal-body">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -90,6 +112,59 @@
                     cell.innerHTML = i + 1;
                 });
             }).draw();
+        });
+
+
+        $('body').on('click', '.order-detail', function () {
+            jQuery.ajax({
+                url: '/order/detail/' + $(this).attr('id') + '/',
+                cache: false,
+                error: function () {
+                    console.log("error");
+                },
+                success: function (data) {
+
+                    $('.modal').modal('show');
+                    $('.modal-dialog').addClass('modal-lg modal-dialog-centered');
+                    $('.modal-body').html(data);
+                    $('.modal-title').hide();
+                    {#$('.modal-header').html();#}
+                },
+                type: 'GET'
+            });
+        });
+
+        $('body').on('click', '.customer-detail', function () {
+            jQuery.ajax({
+                url: '/api/customers/detail/' + $(this).attr('id') + '/',
+                cache: false,
+                error: function () {
+                    console.log("error");
+                },
+                success: function (data) {
+
+                    console.log(data);
+
+                    var detail = "<table class='table table-responsive'>";
+
+                    detail += "<tr><td>Owner</td><td>" + data.owner + "</td></tr>";
+                    detail += "<tr><td>Company</td><td>" + data.company + "</td></tr>";
+                    detail += "<tr><td>Pan</td><td>" + data.pan_no + "</td></tr>";
+                    detail += "<tr><td>Address</td><td>" + data.address + "</td></tr>";
+                    detail += "<tr><td>Mobile</td><td>" + data.mobile_no + "</td></tr>";
+                    detail += "<tr><td>Phone</td><td>" + data.phone_no + "</td></tr>";
+                    detail += "<tr><td>Email</td><td>" + data.email + "</td></tr>";
+
+                    detail += "</table>";
+
+                    $('.modal').modal('show');
+                    $('.modal-dialog').addClass('modal-lg modal-dialog-centered');
+                    $('.modal-body').html(detail);
+                    $('.modal-title').hide();
+                    {#$('.modal-header').html();#}
+                },
+                type: 'GET'
+            });
         });
     </script>
 {% endblock %}

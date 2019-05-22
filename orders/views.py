@@ -234,3 +234,20 @@ def order_history_detail(request, pk):
     order_item = OrderItem.objects.filter(order__id=pk)
     context['cart_items'] = order_item
     return render(request, 'orders/order_history_detail.html', context)
+
+
+@login_required
+def order_detail(request, pk):
+    context = {}
+    order_item = OrderItem.objects.filter(order__id=pk)
+    context['cart_items'] = order_item
+    return render(request, 'orders/order_detail.html', context)
+
+#
+# @login_required
+# def order_list(request):
+#     context = {}
+#     orders = Order.objects.filter(status__iexact='new')
+#     context['orders'] = orders
+#
+#     return render(request, 'orders/')

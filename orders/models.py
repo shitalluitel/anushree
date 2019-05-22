@@ -61,7 +61,8 @@ class CartItem(models.Model):
             if user.is_authenticated and not user.is_superuser and not user.groups.name == 'admin':
                 count = user.cart.items.all().count()
                 return count
-        except:
+        except Exception as e:
+            print(e)
             return None
 
 
@@ -90,7 +91,7 @@ class Order(models.Model):
     customer = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         related_name='orders',
-        on_delete=models.CASCADE,
+        on_delete=models.DO_NOTHING,
         null=True,
         blank=True
     )

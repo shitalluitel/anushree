@@ -16,7 +16,7 @@ def create_customer(request):
         if form.is_valid():
             customer = form.save()
 
-            cart  = Cart.objects.get_or_create(customer=customer)
+            cart = Cart.objects.get_or_create(customer=customer)
 
             messages.success(request, 'Customer with username {} and password {} has been created.'.format(
                 customer.user.username, customer.owner.split(' ')[0] + '123'))

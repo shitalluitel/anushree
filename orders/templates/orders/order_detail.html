@@ -1,0 +1,43 @@
+{% load mul %}
+
+<div class="row">
+    <div class="col">
+        <table class="table table-bordered table-responsive-sm table-hover">
+            <thead>
+            <tr>
+                <th>S.N.</th>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for product_item in cart_items %}
+                <tr>
+                    <td style="width: 5%;">{{ forloop.counter }}</td>
+                    <td style="width: 30%;">
+                        {{ product_item.product }}
+                    </td>
+                    <td style="width: 30%;">
+                        {{ product_item.product.category }}
+                    </td>
+                    <td style="width: 15%">
+                        {{ product_item.quantity }}
+                    </td>
+                    <td style="width: 15%;">{{ product_item.product.price }}</td>
+                    <td style="width: 15%;" class="total">
+                        {{ product_item.quantity|mul:product_item.product.price }}
+                    </td>
+
+                </tr>
+            {% endfor %}
+
+            </tbody>
+        </table>
+        {#                    <a class="btn btn-danger" href="{% url 'cart:destroy' pk=cart.id %}">Clear Cart</a>#}
+
+    </div>
+</div>
+

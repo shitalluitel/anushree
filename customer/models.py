@@ -29,6 +29,9 @@ class Customer(models.Model):
     def __str__(self):
         return self.company
 
+    # def full_name(self):
+    #     return self.owner
+
     class Meta:
         db_table = "customer"
         verbose_name = 'Customer'
