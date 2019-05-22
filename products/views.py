@@ -64,10 +64,13 @@ def tire_list(request):
         messages.warning(request, 'Category for these data has been deleted or inactive.')
 
     context['datas'] = datas
-    if not user.groups.name == 'admin' and not user.is_superuser:
-        product_detail = user.cart.items.all()
-        items = ([x.product for x in product_detail])
-        context['cart_item'] = items
+    try:
+        if not user.groups.name == 'admin' and not user.is_superuser:
+            product_detail = user.cart.items.all()
+            items = ([x.product for x in product_detail])
+            context['cart_item'] = items
+    except Exception as e:
+        print(e)
     return render(request, 'products/tire/list.html', context)
 
 

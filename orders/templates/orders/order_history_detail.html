@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{#{% load split %}#}
+{% load mul %}
+
+{% block extra_stylesheets %}
+    {#    <link rel="stylesheet" href="{% static '/css/cart.css' %}">#}
+{% endblock %}
+
+{% block page_name %}
+    Order
+{% endblock %}
+
+{% block page_description %}
+    History Detail
+{% endblock %}
+
+{% block breadcrumbLink %}
+    <li>
+        <a href="{% url 'orders:history' %}" class="breadcrumb-item">Order History</a>
+    </li>
+{% endblock %}
+
+
+{% block content %}
+    <div class="panel">
+        <div class="panel-body">
+            {% if cart_items.exists %}
+                <div class="row">
+                    <div class="col">
+                        <table class="table table-bordered table-responsive-sm table-hover">
+                            <thead>
+                            <tr>
+                                <th>S.N.</th>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for product_item in cart_items %}
+                                <tr>
+                                    <td style="width: 5%;">{{ forloop.counter }}</td>
+                                    <td style="width: 30%;">
+                                        {{ product_item.product }}
+                                    </td>
+                                    <td style="width: 30%;">
+                                        {{ product_item.product.category }}
+                                    </td>
+                                    <td style="width: 15%">
+                                        {{ product_item.quantity }}
+                                    </td>
+                                    <td style="width: 15%;">{{ product_item.product.price }}</td>
+                                    <td style="width: 15%;" class="total">
+                                        {{ product_item.quantity|mul:product_item.product.price }}
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                            <tr>
+                                <td colspan="3"></td>
+                                <td colspan="2" style="border-right-style: hidden;" class="text-right"><b>Grand
+                                    Total:</b></td>
+                                <td colspan="2"><strong class="grand-total"></strong></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        {#                    <a class="btn btn-danger" href="{% url 'cart:destroy' pk=cart.id %}">Clear Cart</a>#}
+
+                    </div>
+                </div>
+
+            {% endif %}
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block extra_script %}
+    <script>
+        $(document).on('ready', function () {
+            var grand_total = 0;
+            $('.total').each(function () {
+                grand_total += parseFloat($(this).text());
+            });
+
+            $('.grand-total').text(grand_total);
+        });
+
+        $('body').on('change', '.quantity', function (e) {
+            var cart_form = $(this).parent('form');
+            cart_form.attr('action', '/order/add_to_cart/').submit();
+        });
+
+        $('body').on('click', '.remove-from-cart', function () {
+            var cart = $(this).closest('tr').find('form');
+            cart.attr('action', '/order/remove_from_cart/').submit();
+        });
+    </script>
+{% endblock %}

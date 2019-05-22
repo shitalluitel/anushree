@@ -12,4 +12,6 @@ urlpatterns = [
     url(r'^display/$', views.cart_home, name='cart_home'),
     url(r'^cart/destroy/$', views.destroy_cart, name='destroy_cart'),
     url(r'^create/$', views.order_create, name='order_create'),
+    url(r'^history/$', views.order_history, name='history'),
+    url(r'^history-detail/(?P<pk>\d+)$', views.order_history_detail, name='history_detail'),
 ]

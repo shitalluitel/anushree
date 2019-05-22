@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 from customer.forms import CustomerForm, ChangePasswordForm
 from customer.models import Customer
+from orders.models import Cart
 from users.models import User
 
 
@@ -14,6 +15,9 @@ def create_customer(request):
     if request.method == 'POST':
         if form.is_valid():
             customer = form.save()
+
+            cart  = Cart.objects.get_or_create(customer=customer)
+
             messages.success(request, 'Customer with username {} and password {} has been created.'.format(
                 customer.user.username, customer.owner.split(' ')[0] + '123'))
             return redirect('customers:create')

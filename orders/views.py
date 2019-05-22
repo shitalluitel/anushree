@@ -13,6 +13,8 @@ from orders.models import Order, Cart, CartItem, OrderItem
 from products.models import Product
 from django.db.models import Sum, F, FloatField
 
+from users.models import User
+
 
 @permission_required('orders.add_order')
 def new_order_list(request):
@@ -203,8 +205,9 @@ def order_create(request):
 
         OrderItem.objects.bulk_create(order_items)
 
-        group = Group.objects.get(name__icontaions='admin')
-        notify.send(sender=request.user, recipient=group,
+        # group = Group.objects.get(name__icontains='admin')
+        admin = User.objects.filter(is_superuser=True)
+        notify.send(sender=request.user, recipient=admin,
                     verb='Order for Items by {}'.format(user.get_full_name()),
                     description="{} ordered for {} items.".format(user.get_full_name(),
                                                                   user.cart.items.all().count()))
@@ -214,3 +217,20 @@ def order_create(request):
         messages.error(request, str(e))
 
     return redirect('orders:cart_home')
+
+
+@login_required
+def order_history(request):
+    context = {}
+    data = Order.objects.filter(customer=request.user, status__iexact='confirmed')
+    print(data)
+    context['orders'] = data
+    return render(request, 'orders/order_history.html', context)
+
+
+@login_required
+def order_history_detail(request, pk):
+    context = {}
+    order_item = OrderItem.objects.filter(order__id=pk)
+    context['cart_items'] = order_item
+    return render(request, 'orders/order_history_detail.html', context)

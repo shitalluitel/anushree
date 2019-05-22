@@ -57,10 +57,12 @@ class CartItem(models.Model):
     @staticmethod
     def get_items_count(request):
         user = request.user
-        if user.is_authenticated and not user.is_superuser and not user.groups.name == 'admin':
-            count = user.cart.items.all().count()
-            return count
-        return None
+        try: 
+            if user.is_authenticated and not user.is_superuser and not user.groups.name == 'admin':
+                count = user.cart.items.all().count()
+                return count
+        except:
+            return None
 
 
 class OrderQuerySet(models.QuerySet):

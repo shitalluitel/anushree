@@ -6,15 +6,25 @@
     <a href="{% url 'products:product_home' %}">
         <i class="fa fa-tags"></i>
         <span>Product</span>
-{#        <span class="pull-right-container">#}
-{#              <i class="fa fa-angle-left pull-right"></i>#}
-{#            </span>#}
+        {#        <span class="pull-right-container">#}
+        {#              <i class="fa fa-angle-left pull-right"></i>#}
+        {#            </span>#}
     </a>
-{#    <ul class="treeview-menu">#}
-{#        <li><a href="{% url 'products:tube_list' %}"> <i class="fa fa-circle-o">&nbsp; Tube List</i></a></li>#}
-{#        <li><a href="{% url 'products:tire_list' %}"> <i class="fa fa-circle-o">&nbsp; Tire List</i></a></li>#}
-{#    </ul>#}
+    {#    <ul class="treeview-menu">#}
+    {#        <li><a href="{% url 'products:tube_list' %}"> <i class="fa fa-circle-o">&nbsp; Tube List</i></a></li>#}
+    {#        <li><a href="{% url 'products:tire_list' %}"> <i class="fa fa-circle-o">&nbsp; Tire List</i></a></li>#}
+    {#    </ul>#}
 </li>
+
+{% if not request.user|has_group:'admin' and not request.user.is_superuser %}
+    <li class="treeview">
+        <a href="{% url 'orders:history' %}">
+            <i class="fa fa-tags"></i>
+            <span>Order History</span>
+        </a>
+    </li>
+{% endif %}
+
 {% if request.user|has_group:'admin' or request.user.is_superuser %}
 
     <li class="treeview">

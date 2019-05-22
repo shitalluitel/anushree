@@ -6,14 +6,9 @@
 {% endblock %}
 
 {% block page_description %}
-    New List
+    History
 {% endblock %}
 
-{% block breadcrumbLink %}
-    <li>
-        <a href="{% url 'orders:new_order_list' %}" class="breadcrumb-item">New List</a>
-    </li>
-{% endblock %}
 
 {% block body_content %}
 
@@ -27,31 +22,22 @@
                         <tr>
                             <th style="width: 5%">S.N.</th>
                             <th>Order ID</th>
-                            <th>Customer</th>
                             <th>Ordered At</th>
                             <th>Total</th>
-                            <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         {% for data in orders %}
                             <tr>
                                 <td></td>
-                                <td>{{ data.id }}</td>
-                                <td>{{ data.customer.full_name }}</td>
+                                <td><a href="{% url 'orders:history_detail' data.id %}">{{ data.id }}</a></td>
                                 <td>
                                     {{ data.created_at }}
                                 </td>
                                 <td>
                                     {{ data.total }}
                                 </td>
-                                <td>
-                                    <a class="btn btn-success btn-sm"
-                                       href="{% url 'orders:confirm_order' data.pk %}">Confirm</a>
-                                    <a class="btn btn-danger btn-sm"
-                                       href="{% url 'orders:reject_order' data.pk %}">Reject</a>
 
-                                </td>
                             </tr>
 
                         {% endfor %}
