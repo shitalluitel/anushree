@@ -4,7 +4,7 @@ from django.views.generic.base import View
 # from momohub.mixins import HttpResponseMixin
 from rest_framework import generics
 from rest_framework.authentication import SessionAuthentication
-from rest_framework.permissions import IsAuthenticated, DjangoModelPermissionsOrAnonReadOnly, CustomModelPermissions
+# from rest_framework.permissions import IsAuthenticated, DjangoModelPermissionsOrAnonReadOnly
 
 from anushree.permission import CustomModelPermissions
 from products.api.serializers import TireSerializer, TubeSerializer
