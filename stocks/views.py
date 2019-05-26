@@ -3,10 +3,12 @@ from django.db import transaction, IntegrityError
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from anushree.decorators import group_required
 from stocks.forms import TireStockForm, TubeStockForm
 from stocks.models import Stock
 
 
+@group_required('admin', raise_exception=True)
 def add_tire_stock(request):
     context = {}
     form = TireStockForm(request.POST or None)
@@ -34,6 +36,7 @@ def add_tire_stock(request):
     return render(request, 'stocks/tire_create.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def add_tube_stock(request):
     context = {}
     form = TubeStockForm(request.POST or None)
@@ -61,6 +64,7 @@ def add_tube_stock(request):
     return render(request, 'stocks/tube_create.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def list_tube_stock(request):
     context = {}
 
@@ -71,6 +75,7 @@ def list_tube_stock(request):
     return render(request, 'stocks/history_list.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def list_tire_stock(request):
     context = {}
 
@@ -81,9 +86,11 @@ def list_tire_stock(request):
     return render(request, 'stocks/history_list.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def create_home(request):
     return render(request, 'stocks/create_home.html')
 
 
+@group_required('admin', raise_exception=True)
 def history_home(request):
     return render(request, 'stocks/history_home.html')

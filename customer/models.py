@@ -36,6 +36,10 @@ class Customer(models.Model):
         db_table = "customer"
         verbose_name = 'Customer'
         verbose_name_plural = 'Customers'
+        permissions = (
+            ('change_customer_status', 'Can Change Customer Status'),
+            ('view_customer', 'Can View Customer'),
+        )
 
 
 @receiver(models.signals.pre_save, sender=Customer)

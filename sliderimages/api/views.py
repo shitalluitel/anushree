@@ -1,7 +1,7 @@
 import json
 
 from django.views.generic.base import View
-from rest_framework import generics, mixins, permissions
+# from rest_framework import generics, mixins, permissions
 # from rest_framework.authentication import SessionAuthentication
 # from rest_framework.views import APIView
 # from rest_framework.response import Response
@@ -9,7 +9,7 @@ from rest_framework import generics, mixins, permissions
 
 # from accounts.api.permissions import IsOwnerOrReadOnly
 from anushree.mixins import HttpResponseMixin
-from sliderimages.api.serializers import SliderImageSerializer
+# from sliderimages.api.serializers import SliderImageSerializer
 from sliderimages.models import SliderImage
 
 

@@ -2,7 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="723cc4be-c8a2-4d59-8e7a-72e4e43d578f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/templates/sidebar/_main_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar/_main_sidebar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/anushree/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anushree/permission.py" beforeDir="false" afterPath="$PROJECT_DIR$/anushree/permission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/customer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/views/archive.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/views/archive.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/views/tire_design.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/views/tire_design.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/views/trade_mark.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/views/trade_mark.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/views/trade_pattern.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/views/trade_pattern.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings/views/type.py" beforeDir="false" afterPath="$PROJECT_DIR$/settings/views/type.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sliderimages/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sliderimages/api/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sliderimages/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sliderimages/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stocks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/api/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -67,93 +87,97 @@
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/auth_permission">
+                <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+                  <state projectRestartId="856f3678-b93b-4139-b42c-25f1c6467505">
+                    <filtering>
+                      <filter text="" />
+                    </filtering>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="anushree" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orders/views.py">
+        <entry file="file://$PROJECT_DIR$/settings/views/tire_design.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="855">
-              <caret line="243" column="47" selection-start-line="243" selection-start-column="47" selection-end-line="243" selection-end-column="47" />
+            <state relative-caret-position="240">
+              <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
               <folding>
-                <element signature="e#868#1440#0" />
-                <element signature="e#967#1015#0" />
-                <element signature="e#1519#2254#0" />
-                <element signature="e#1618#1666#0" />
-                <element signature="e#2301#2480#0" />
-                <element signature="e#2529#3509#0" />
-                <element signature="e#2637#2768#0" />
-                <element signature="e#2804#2867#0" />
-                <element signature="e#2977#3057#0" />
-                <element signature="e#3180#3252#0" />
-                <element signature="e#3271#3371#0" />
-                <element signature="e#3563#4133#0" />
-                <element signature="e#3648#3730#0" />
-                <element signature="e#3766#3829#0" />
-                <element signature="e#3944#4007#0" />
-                <element signature="e#4183#4552#0" />
-                <element signature="e#4284#4398#0" />
-                <element signature="e#4622#6616#0" />
-                <element signature="e#4724#5008#0" />
-                <element signature="e#4789#5008#0" />
-                <element signature="e#5050#5139#0" />
-                <element signature="e#5158#5453#0" />
-                <element signature="e#5489#5581#0" />
-                <element signature="e#5621#6490#0" />
-                <element signature="e#5662#5998#0" />
-                <element signature="e#6527#6575#0" />
-                <element signature="e#6667#6872#0" />
+                <element signature="e#0#11#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orders/templates/orders/new_order_list.html">
+        <entry file="file://$PROJECT_DIR$/settings/views/trade_mark.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1920">
-              <caret line="128" column="46" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
+            <state relative-caret-position="188">
+              <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orders/templates/orders/order_history_detail.html">
+        <entry file="file://$PROJECT_DIR$/settings/views/trade_pattern.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="4" selection-start-line="82" selection-start-column="4" selection-end-line="101" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orders/templates/orders/order_detail.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+            <state relative-caret-position="150">
+              <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+              <folding>
+                <element signature="e#337#722#0" />
+                <element signature="e#442#629#0" />
+                <element signature="e#474#629#0" />
+                <element signature="e#752#1373#0" />
+                <element signature="e#867#986#0" />
+                <element signature="e#1095#1280#0" />
+                <element signature="e#1127#1280#0" />
+                <element signature="e#1415#1558#0" />
+                <element signature="e#1590#2244#0" />
+                <element signature="e#1644#2087#0" />
+                <element signature="e#1661#1789#0" />
+                <element signature="e#1738#1763#0" />
+                <element signature="e#1844#1965#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/sidebar/_main_sidebar.html">
+        <entry file="file://$PROJECT_DIR$/users/api/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+            <state relative-caret-position="405">
+              <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#60#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/orders/urls.py">
+        <entry file="file://$PROJECT_DIR$/anushree/permission.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="90">
+              <caret line="9" column="28" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -163,15 +187,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name</find>
-      <find>tire_design</find>
       <find>Course</find>
       <find>cate</find>
       <find>Trade Mark</find>
@@ -200,9 +222,10 @@
       <find>permission_classes = []</find>
       <find>Stock History</find>
       <find>list_tire_stock</find>
+      <find>DjangoObjectPermissions</find>
+      <find>archive</find>
     </findStrings>
     <replaceStrings>
-      <replace>TireDesign</replace>
       <replace>TireMark</replace>
       <replace>TradeMark</replace>
       <replace>TradePattern</replace>
@@ -232,6 +255,7 @@
       <replace>permission_classes = [IsAuthenticated]</replace>
       <replace>List</replace>
       <replace>tire_list</replace>
+      <replace>CustomModelPermissions</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -240,28 +264,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/users/views.py" />
-        <option value="$PROJECT_DIR$/users/api/views.py" />
-        <option value="$PROJECT_DIR$/users/api/urls.py" />
-        <option value="$PROJECT_DIR$/customer/api/urls.py" />
-        <option value="$PROJECT_DIR$/customer/api/views.py" />
-        <option value="$PROJECT_DIR$/users/models.py" />
-        <option value="$PROJECT_DIR$/customer/urls.py" />
-        <option value="$PROJECT_DIR$/customer/templates/customers/list.html" />
-        <option value="$PROJECT_DIR$/settings/views/archive.py" />
-        <option value="$PROJECT_DIR$/settings/templates/archive/category_list.html" />
-        <option value="$PROJECT_DIR$/settings/templates/archive/home.html" />
-        <option value="$PROJECT_DIR$/settings/templates/archive/product_archive_home.html" />
-        <option value="$PROJECT_DIR$/customer/templates/customers/change_password.html" />
-        <option value="$PROJECT_DIR$/users/templates/users/change_password.html" />
-        <option value="$PROJECT_DIR$/orders/api/serializers.py" />
         <option value="$PROJECT_DIR$/products/models.py" />
         <option value="$PROJECT_DIR$/stocks/forms.py" />
         <option value="$PROJECT_DIR$/customer/forms.py" />
         <option value="$PROJECT_DIR$/users/admin.py" />
-        <option value="$PROJECT_DIR$/anushree/permission.py" />
         <option value="$PROJECT_DIR$/products/api/urls.py" />
-        <option value="$PROJECT_DIR$/products/api/views.py" />
         <option value="$PROJECT_DIR$/products/api/serializers.py" />
         <option value="$PROJECT_DIR$/pages/urls.py" />
         <option value="$PROJECT_DIR$/pages/templates/pages/_admin_dashboard.html" />
@@ -278,25 +285,41 @@
         <option value="$PROJECT_DIR$/orders/api/views.py" />
         <option value="$PROJECT_DIR$/products/urls.py" />
         <option value="$PROJECT_DIR$/products/templates/products/product_home.html" />
-        <option value="$PROJECT_DIR$/products/views.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/.datagrid/cell" />
         <option value="$PROJECT_DIR$/orders/templates/orders/order_history_distory.html" />
         <option value="$PROJECT_DIR$/orders/templates/orders/order_history_detail.html" />
         <option value="$PROJECT_DIR$/orders/templates/orders/order_history.html" />
         <option value="$PROJECT_DIR$/orders/models.py" />
-        <option value="$PROJECT_DIR$/customer/models.py" />
-        <option value="$PROJECT_DIR$/customer/views.py" />
         <option value="$PROJECT_DIR$/orders/views.py" />
         <option value="$PROJECT_DIR$/orders/urls.py" />
         <option value="$PROJECT_DIR$/orders/templates/orders/new_order_list.html" />
         <option value="$PROJECT_DIR$/orders/templates/orders/order_detail.html" />
         <option value="$PROJECT_DIR$/templates/sidebar/_main_sidebar.html" />
+        <option value="$PROJECT_DIR$/categories/api/views.py" />
+        <option value="$PROJECT_DIR$/sliderimages/api/views.py" />
+        <option value="$PROJECT_DIR$/categories/views.py" />
+        <option value="$PROJECT_DIR$/categories/api/urls.py" />
+        <option value="$PROJECT_DIR$/customer/views.py" />
+        <option value="$PROJECT_DIR$/customer/api/urls.py" />
+        <option value="$PROJECT_DIR$/customer/models.py" />
+        <option value="$PROJECT_DIR$/anushree/permission.py" />
+        <option value="$PROJECT_DIR$/customer/api/views.py" />
+        <option value="$PROJECT_DIR$/products/api/views.py" />
+        <option value="$PROJECT_DIR$/products/views.py" />
+        <option value="$PROJECT_DIR$/anushree/decorators.py" />
+        <option value="$PROJECT_DIR$/settings/views/archive.py" />
+        <option value="$PROJECT_DIR$/settings/views/tire_design.py" />
+        <option value="$PROJECT_DIR$/settings/views/trade_mark.py" />
+        <option value="$PROJECT_DIR$/settings/views/trade_pattern.py" />
+        <option value="$PROJECT_DIR$/settings/views/type.py" />
+        <option value="$PROJECT_DIR$/sliderimages/views.py" />
+        <option value="$PROJECT_DIR$/stocks/views.py" />
+        <option value="$PROJECT_DIR$/users/api/views.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="170" />
-    <option name="y" value="119" />
+    <option name="x" value="1573" />
     <option name="width" value="1026" />
     <option name="height" value="557" />
   </component>
@@ -319,18 +342,45 @@
             <path>
               <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
               <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="anushree" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
               <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="sidebar" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anushree" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anushree" type="462c0819:PsiDirectoryNode" />
+              <item name="settings" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anushree" type="462c0819:PsiDirectoryNode" />
+              <item name="sliderimages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anushree" type="462c0819:PsiDirectoryNode" />
+              <item name="stocks" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
               <item name="anushree" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="anushree" type="462c0819:PsiDirectoryNode" />
+              <item name="users" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -445,12 +495,14 @@
       <workItem from="1558178760782" duration="1549000" />
       <workItem from="1558342473543" duration="5653000" />
       <workItem from="1558503213353" duration="9374000" />
-      <workItem from="1558593038330" duration="763000" />
+      <workItem from="1558593038330" duration="6181000" />
+      <workItem from="1558798570202" duration="2222000" />
+      <workItem from="1558838611514" duration="5478000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188660000" />
+    <option name="totallyTimeSpent" value="201778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,15 +514,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="25" width="1366" height="743" extended-state="6" />
+    <frame x="1366" y="-2" width="1366" height="770" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.21016692" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49514562" visible="true" weight="0.21775417" />
       <window_info id="Favorites" order="1" sideWeight="0.50363195" side_tool="true" weight="0.20378788" />
       <window_info id="Structure" order="2" sideWeight="0.5048544" weight="0.22651514" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.292517" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.2910569" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -479,7 +531,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007576" side_tool="true" weight="0.32736155" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.32482994" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5398374" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.30406505" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -520,224 +572,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/anushree/permission.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="65" column="5" selection-start-line="65" selection-start-column="5" selection-end-line="65" selection-end-column="5" />
-          <folding>
-            <element signature="e#29#43#0" expanded="true" />
-            <element signature="e#152#154#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#190#222#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/api/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/users/api/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="54" column="94" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="94" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
-          <folding>
-            <element signature="e#246#291#0" />
-            <element signature="e#1197#1559#0" />
-            <element signature="e#1442#1559#0" />
-            <element signature="e#1614#1978#0" />
-            <element signature="e#1861#1978#0" />
-            <element signature="e#2298#2517#0" />
-            <element signature="e#2572#2775#0" />
-            <element signature="e#2778#2827#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/api/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#276#621#0" />
-            <element signature="e#291#556#0" />
-            <element signature="e#440#658#0" />
-            <element signature="e#415#428#0" />
-            <element signature="e#789#1179#0" />
-            <element signature="e#664#919#0" />
-            <element signature="e#622#780#0" />
-            <element signature="e#828#1077#0" />
-            <element signature="e#848#1077#0" />
-            <element signature="e#882#1077#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/api/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
-          <caret line="53" column="30" selection-start-line="53" selection-start-column="30" selection-end-line="53" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/models.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/templates/pages/_admin_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/templates/pages/_customer_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-279">
-          <caret line="170" column="50" selection-start-line="170" selection-start-column="50" selection-end-line="170" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/customFormset.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="69" column="15" lean-forward="true" selection-start-line="59" selection-start-column="12" selection-end-line="69" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/custom.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/api/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/orders_cartitem">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/orders_cart">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anushree/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/products/tube/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="167" column="43" selection-start-line="167" selection-start-column="43" selection-end-line="167" selection-end-column="43" />
-          <folding>
-            <element signature="e#3301#3321#0#HTML" expanded="true" />
-            <element signature="e#3581#3601#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/settings/templatetags/mul.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/templates/products/tire/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2385">
-          <caret line="159" column="43" selection-start-line="159" selection-start-column="43" selection-end-line="159" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main_pages/_main_header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="43" column="94" selection-start-line="43" selection-start-column="94" selection-end-line="43" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/products">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/orders_orderitem">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering>
-            <filter text="" />
-          </filtering>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/products/templates/products/tire/create.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-306" />
@@ -773,63 +607,6 @@
           <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="71" column="26" lean-forward="true" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
-          <folding>
-            <element signature="e#309#1057#0" />
-            <element signature="e#405#965#0" />
-            <element signature="e#437#938#0" />
-            <element signature="e#595#705#0" />
-            <element signature="e#1090#1796#0" />
-            <element signature="e#1186#1702#0" />
-            <element signature="e#1218#1702#0" />
-            <element signature="e#1376#1486#0" />
-            <element signature="e#2437#3018#0" />
-            <element signature="e#2825#2954#0" />
-            <element signature="e#3055#3647#0" />
-            <element signature="e#3203#3280#0" />
-            <element signature="e#3384#3554#0" />
-            <element signature="e#3416#3554#0" />
-            <element signature="e#3684#4273#0" />
-            <element signature="e#3833#3910#0" />
-            <element signature="e#4010#4180#0" />
-            <element signature="e#4042#4180#0" />
-            <element signature="e#4312#5283#0" />
-            <element signature="e#4366#5006#0" />
-            <element signature="e#4383#4869#0" />
-            <element signature="e#4503#4657#0" />
-            <element signature="e#4692#4869#0" />
-            <element signature="e#4925#5006#0" />
-            <element signature="e#5322#6296#0" />
-            <element signature="e#5376#6017#0" />
-            <element signature="e#5393#5880#0" />
-            <element signature="e#5513#5667#0" />
-            <element signature="e#5702#5880#0" />
-            <element signature="e#5936#6017#0" />
-            <element signature="e#6333#7045#0" />
-            <element signature="e#6387#6798#0" />
-            <element signature="e#6404#6659#0" />
-            <element signature="e#6715#6798#0" />
-            <element signature="e#7082#7794#0" />
-            <element signature="e#7136#7547#0" />
-            <element signature="e#7153#7408#0" />
-            <element signature="e#7464#7547#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/orders/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="65" column="74" lean-forward="true" selection-start-line="65" selection-start-column="74" selection-end-line="65" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -880,56 +657,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/anushree/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="166" column="16" lean-forward="true" selection-start-line="166" selection-start-column="16" selection-end-line="166" selection-end-column="16" />
-          <folding>
-            <element signature="e#313#322#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/users/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-390">
           <caret line="42" column="25" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/api/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="471">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/customer/api/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1002,9 +733,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/orders/templates/orders/order_detail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/sidebar/_main_sidebar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/orders/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
+        <state relative-caret-position="270">
           <caret line="18" selection-start-line="18" selection-end-line="18" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
@@ -1012,17 +757,404 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/orders/templates/orders/order_detail.html">
+    <entry file="file://$USER_HOME$/.virtualenvs/anushree/lib/python3.6/site-packages/django/views/generic/base.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="34" column="24" selection-start-line="34" selection-start-column="24" selection-end-line="34" selection-end-column="24" />
+        <state relative-caret-position="120">
+          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+          <folding>
+            <element signature="e#437#700#0" />
+            <element signature="e#727#3944#0" />
+            <element signature="e#3988#5292#0" />
+            <element signature="e#5362#5644#0" />
+            <element signature="e#5677#7582#0" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/sidebar/_main_sidebar.html">
+    <entry file="file://$PROJECT_DIR$/orders/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="4" />
+        <state relative-caret-position="75">
+          <caret line="5" column="35" lean-forward="true" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sliderimages/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sliderimages/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="58" lean-forward="true" selection-start-line="4" selection-start-column="58" selection-end-line="4" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/categories/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="89" column="50" selection-start-line="89" selection-start-column="50" selection-end-line="89" selection-end-column="50" />
+          <folding>
+            <element signature="e#250#604#0" />
+            <element signature="e#350#514#0" />
+            <element signature="e#382#514#0" />
+            <element signature="e#630#786#0" />
+            <element signature="e#818#1367#0" />
+            <element signature="e#934#1008#0" />
+            <element signature="e#1113#1277#0" />
+            <element signature="e#1145#1277#0" />
+            <element signature="e#1401#2651#0" />
+            <element signature="e#1455#2381#0" />
+            <element signature="e#1472#2247#0" />
+            <element signature="e#1559#2027#0" />
+            <element signature="e#1657#1858#0" />
+            <element signature="e#2062#2247#0" />
+            <element signature="e#2303#2381#0" />
+            <element signature="e#2683#3378#0" />
+            <element signature="e#2737#3131#0" />
+            <element signature="e#2754#2988#0" />
+            <element signature="e#3044#3131#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/categories/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="43" selection-start-line="1" selection-start-column="43" selection-end-line="1" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/categories/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="28" lean-forward="true" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anushree/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="179" column="62" selection-start-line="179" selection-start-column="10" selection-end-line="179" selection-end-column="62" />
+          <folding>
+            <element signature="e#313#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="40" column="51" selection-start-line="40" selection-start-column="51" selection-end-line="40" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/api/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="36" selection-end-line="15" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/anushree/lib/python3.6/site-packages/rest_framework/permissions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="141" column="6" selection-start-line="141" selection-start-column="6" selection-end-line="141" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/customer/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <element signature="e#450#1064#0" />
+            <element signature="e#551#975#0" />
+            <element signature="e#583#907#0" />
+            <element signature="e#1167#1304#0" />
+            <element signature="e#1370#2051#0" />
+            <element signature="e#1482#1953#0" />
+            <element signature="e#1514#1878#0" />
+            <element signature="e#2173#2561#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/orders/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-352">
+          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-427">
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#483#528#0" />
+            <element signature="e#2881#2930#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/products/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="251" column="15" selection-start-line="251" selection-start-column="15" selection-end-line="251" selection-end-column="15" />
+          <folding>
+            <element signature="e#309#1057#0" />
+            <element signature="e#405#965#0" />
+            <element signature="e#437#938#0" />
+            <element signature="e#595#705#0" />
+            <element signature="e#1090#1796#0" />
+            <element signature="e#1186#1702#0" />
+            <element signature="e#1218#1702#0" />
+            <element signature="e#1376#1486#0" />
+            <element signature="e#1827#2475#0" />
+            <element signature="e#2157#2368#0" />
+            <element signature="e#2231#2368#0" />
+            <element signature="e#2506#3087#0" />
+            <element signature="e#2894#3023#0" />
+            <element signature="e#3124#3716#0" />
+            <element signature="e#3272#3349#0" />
+            <element signature="e#3453#3623#0" />
+            <element signature="e#3485#3623#0" />
+            <element signature="e#3753#4342#0" />
+            <element signature="e#3902#3979#0" />
+            <element signature="e#4079#4249#0" />
+            <element signature="e#4111#4249#0" />
+            <element signature="e#4381#5352#0" />
+            <element signature="e#4435#5075#0" />
+            <element signature="e#4452#4938#0" />
+            <element signature="e#4572#4726#0" />
+            <element signature="e#4761#4938#0" />
+            <element signature="e#4994#5075#0" />
+            <element signature="e#5391#6365#0" />
+            <element signature="e#5445#6086#0" />
+            <element signature="e#5462#5949#0" />
+            <element signature="e#5582#5736#0" />
+            <element signature="e#5771#5949#0" />
+            <element signature="e#6005#6086#0" />
+            <element signature="e#6402#7114#0" />
+            <element signature="e#6456#6867#0" />
+            <element signature="e#6473#6728#0" />
+            <element signature="e#6784#6867#0" />
+            <element signature="e#7151#7863#0" />
+            <element signature="e#7205#7616#0" />
+            <element signature="e#7222#7477#0" />
+            <element signature="e#7533#7616#0" />
+            <element signature="e#7897#7949#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/auth_permission">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="856f3678-b93b-4139-b42c-25f1c6467505">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anushree/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="61" selection-start-line="26" selection-start-column="61" selection-end-line="26" selection-end-column="61" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://5079a812-4b58-42a4-86b0-b23507161425/database/anushree/schema/public/table/auth_group">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="856f3678-b93b-4139-b42c-25f1c6467505">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/views/archive.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="41" column="46" selection-start-line="41" selection-start-column="46" selection-end-line="41" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/models/trade_mark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/views/tire_design.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="56" column="13" selection-start-line="56" selection-start-column="13" selection-end-line="56" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/views/trade_mark.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="56" column="4" selection-start-line="56" selection-start-column="4" selection-end-line="56" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/views/type.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="e#321#680#0" />
+            <element signature="e#418#596#0" />
+            <element signature="e#450#596#0" />
+            <element signature="e#710#1280#0" />
+            <element signature="e#809#919#0" />
+            <element signature="e#1020#1196#0" />
+            <element signature="e#1052#1196#0" />
+            <element signature="e#1322#1448#0" />
+            <element signature="e#1480#2083#0" />
+            <element signature="e#1534#1943#0" />
+            <element signature="e#1551#1671#0" />
+            <element signature="e#1620#1645#0" />
+            <element signature="e#1718#1830#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings/views/trade_pattern.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="47" lean-forward="true" selection-start-line="47" selection-end-line="47" />
+          <folding>
+            <element signature="e#337#722#0" />
+            <element signature="e#442#629#0" />
+            <element signature="e#474#629#0" />
+            <element signature="e#752#1373#0" />
+            <element signature="e#867#986#0" />
+            <element signature="e#1095#1280#0" />
+            <element signature="e#1127#1280#0" />
+            <element signature="e#1415#1558#0" />
+            <element signature="e#1590#2244#0" />
+            <element signature="e#1644#2087#0" />
+            <element signature="e#1661#1789#0" />
+            <element signature="e#1738#1763#0" />
+            <element signature="e#1844#1965#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sliderimages/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="26" column="46" lean-forward="true" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding>
+            <element signature="e#240#637#0" />
+            <element signature="e#374#545#0" />
+            <element signature="e#406#545#0" />
+            <element signature="e#676#816#0" />
+            <element signature="e#861#1550#0" />
+            <element signature="e#984#1060#0" />
+            <element signature="e#1146#1412#0" />
+            <element signature="e#1264#1412#0" />
+            <element signature="e#1597#1838#0" />
+            <element signature="e#1702#1778#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stocks/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding>
+            <element signature="e#280#1011#0" />
+            <element signature="e#382#920#0" />
+            <element signature="e#414#920#0" />
+            <element signature="e#435#775#0" />
+            <element signature="e#482#775#0" />
+            <element signature="e#832#920#0" />
+            <element signature="e#1047#1803#0" />
+            <element signature="e#1149#1712#0" />
+            <element signature="e#1181#1712#0" />
+            <element signature="e#1202#1542#0" />
+            <element signature="e#1249#1542#0" />
+            <element signature="e#1599#1712#0" />
+            <element signature="e#1840#2053#0" />
+            <element signature="e#2090#2303#0" />
+            <element signature="e#2336#2385#0" />
+            <element signature="e#2419#2469#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/anushree/permission.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/users/api/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#60#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

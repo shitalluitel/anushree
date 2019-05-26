@@ -2,7 +2,7 @@ import json
 
 from django.views.generic.base import View
 
-from momohub.mixins import HttpResponseMixin
+from anushree.mixins import HttpResponseMixin
 from categories.models import Category
 
 

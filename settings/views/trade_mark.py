@@ -6,9 +6,11 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render, redirect, reverse
 
+from anushree.decorators import group_required
 from settings.forms import TradeMarkForm, TradeMark
 
 
+@group_required('admin', raise_exception=True)
 def create(request):
     context = {}
     form = TradeMarkForm(request.POST or None)
@@ -23,6 +25,7 @@ def create(request):
     return render(request, 'trade_mark/create.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def edit(request, pk):
     context = {}
     try:
@@ -43,7 +46,7 @@ def edit(request, pk):
     return render(request, 'trade_mark/create.html', context)
 
 
-@login_required
+@group_required('admin', raise_exception=True)
 def list(request):
     context = {}
     datas = TradeMark.objects.all()
@@ -51,6 +54,7 @@ def list(request):
     return render(request, 'trade_mark/list.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def delete(request, pk):
     context = {}
     if request.method == "POST":

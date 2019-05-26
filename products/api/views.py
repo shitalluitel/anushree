@@ -4,9 +4,9 @@ from django.views.generic.base import View
 # from momohub.mixins import HttpResponseMixin
 from rest_framework import generics
 from rest_framework.authentication import SessionAuthentication
-from rest_framework.permissions import IsAuthenticated, DjangoModelPermissionsOrAnonReadOnly, DjangoObjectPermissions
+from rest_framework.permissions import IsAuthenticated, DjangoModelPermissionsOrAnonReadOnly, CustomModelPermissions
 
-from anushree.permission import CustomObjectPermissions
+from anushree.permission import CustomModelPermissions
 from products.api.serializers import TireSerializer, TubeSerializer
 from products.models import Product
 
@@ -43,7 +43,7 @@ from products.models import Product
 
 
 class TireDetailView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [DjangoObjectPermissions]
+    permission_classes = [CustomModelPermissions]
     authentication_classes = [SessionAuthentication]
     # perms_map =
     queryset = Product.objects.filter(category__name__icontains='tire')
@@ -59,7 +59,7 @@ class TireDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class TubeDetailView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [DjangoObjectPermissions]
+    permission_classes = [CustomModelPermissions]
     authentication_classes = [SessionAuthentication]
     queryset = Product.objects.filter(category__name__icontains='tube', )
     serializer_class = TubeSerializer
@@ -74,14 +74,14 @@ class TubeDetailView(generics.RetrieveUpdateDestroyAPIView):
 
 
 class TireListView(generics.ListCreateAPIView):
-    permission_classes = [DjangoObjectPermissions]
+    permission_classes = [CustomModelPermissions]
     authentication_classes = [SessionAuthentication]
     queryset = Product.objects.filter(category__name__icontains='tire')
     serializer_class = TireSerializer
 
 
 class TubeListView(generics.ListCreateAPIView):
-    permission_classes = [DjangoObjectPermissions]
+    permission_classes = [CustomModelPermissions]
     authentication_classes = [SessionAuthentication]
     queryset = Product.objects.filter(category__name__icontains='tube', )
     serializer_class = TubeSerializer

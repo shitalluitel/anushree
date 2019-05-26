@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import permission_required, login_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -8,6 +9,7 @@ from orders.models import Cart
 from users.models import User
 
 
+@permission_required('customer.add_customer', raise_exception=True)
 def create_customer(request):
     context = {}
     form = CustomerForm(request.POST or None)
@@ -27,6 +29,7 @@ def create_customer(request):
     return render(request, 'customers/create.html', context)
 
 
+@permission_required('customer.list_customer', raise_exception=True)
 def list_customer(request):
     context = {}
 
@@ -36,6 +39,7 @@ def list_customer(request):
     return render(request, 'customers/list.html', context)
 
 
+@login_required
 def change_customer_password(request, pk):
     context = {}
     form = ChangePasswordForm(request.POST or None)
@@ -57,6 +61,7 @@ def change_customer_password(request, pk):
     return render(request, 'customers/change_password.html', context)
 
 
+@permission_required('customer.change_customer_status', raise_exception=True)
 def toggle_user_status(request, pk):
     context = {}
     user = User.objects.get(pk=pk)

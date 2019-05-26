@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import permission_required, login_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -9,6 +10,7 @@ from products.forms import TubeForm, TireForm, TubeEditForm
 from products.models import Product
 
 
+@permission_required('products.add_product', raise_exception=True)
 def tube_create(request):
     context = {}
     form = TubeForm(request.POST or None)
@@ -30,6 +32,7 @@ def tube_create(request):
     return render(request, 'products/tube/create.html', context)
 
 
+@permission_required('products.add_product', raise_exception=True)
 def tire_create(request):
     context = {}
     form = TireForm(request.POST or None)
@@ -53,6 +56,7 @@ def tire_create(request):
     return render(request, 'products/tire/create.html', context)
 
 
+@login_required
 def tire_list(request):
     context = {}
     user = request.user
@@ -74,6 +78,7 @@ def tire_list(request):
     return render(request, 'products/tire/list.html', context)
 
 
+@login_required
 def tube_list(request):
     context = {}
     user = request.user
@@ -94,6 +99,7 @@ def tube_list(request):
     return render(request, 'products/tube/list.html', context)
 
 
+@permission_required('products.change_product', raise_exception=True)
 def tube_edit(request, slug):
     context = {}
     try:
@@ -114,6 +120,7 @@ def tube_edit(request, slug):
     return render(request, 'products/tube/create.html', context)
 
 
+@permission_required('products.change_product', raise_exception=True)
 def tire_edit(request, slug):
     context = {}
 
@@ -135,6 +142,7 @@ def tire_edit(request, slug):
     return render(request, 'products/tire/create.html', context)
 
 
+@permission_required('products.delete_product', raise_exception=True)
 def tube_delete(request, slug):
     context = {}
     if request.method == "POST":
@@ -162,6 +170,7 @@ def tube_delete(request, slug):
     return render(request, 'snippets/delete.html', context)
 
 
+@permission_required('products.delete_product', raise_exception=True)
 def tire_delete(request, slug):
     context = {}
     if request.method == "POST":
@@ -190,6 +199,7 @@ def tire_delete(request, slug):
     return render(request, 'snippets/delete.html', context)
 
 
+@permission_required('products.delete_product', raise_exception=True)
 def tube_undo(request, slug):
     context = {}
     if request.method == "POST":
@@ -214,6 +224,7 @@ def tube_undo(request, slug):
     return render(request, 'snippets/delete.html', context)
 
 
+@permission_required('products.delete_product', raise_exception=True)
 def tire_undo(request, slug):
     context = {}
     if request.method == "POST":
@@ -238,5 +249,6 @@ def tire_undo(request, slug):
     return render(request, 'snippets/delete.html', context)
 
 
+@login_required
 def product_home(request):
     return render(request, 'products/product_home.html')

@@ -1,13 +1,15 @@
 from rest_framework import generics
 
+from anushree.permission import CustomModelPermissions
 from customer.api.serializers import CustomerSerializer
 from customer.models import Customer
 
 
 class CustomerDetailView(generics.RetrieveAPIView):
-    permission_classes = []
+    permission_classes = [CustomModelPermissions]
     authentication_classes = []
     queryset = Customer.objects.all()
+    # perms_map =
     serializer_class = CustomerSerializer
 
     # lookup_field = 'id'

@@ -2,10 +2,12 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 
 # Create your views here.
+from anushree.decorators import group_required
 from sliderimages.forms import SliderImageForm
 from sliderimages.models import SliderImage
 
 
+@group_required('admin', raise_exception=True)
 def create_slider_image(request):
     context = {}
 
@@ -22,6 +24,7 @@ def create_slider_image(request):
     return render(request, 'sliderimages/create.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def list_slider_image(request):
     context = {}
     data = SliderImage.objects.all()
@@ -30,6 +33,7 @@ def list_slider_image(request):
     return render(request, 'sliderimages/list.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def edit_slider_image(request, slug):
     context = {}
 
@@ -54,6 +58,7 @@ def edit_slider_image(request, slug):
     return render(request, 'sliderimages/create.html', context)
 
 
+@group_required('admin', raise_exception=True)
 def delete_slider_image(request, slug):
     try:
         data = SliderImage.objects.get(slug=slug)

@@ -1,4 +1,5 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required, permission_required
 from django.shortcuts import render, redirect
 
 # Create your views here.
@@ -7,7 +8,8 @@ from django.urls import reverse
 from categories.forms import CategoryForm
 from categories.models import Category
 
-
+@login_required
+@permission_required('categories.add_category', raise_exception=True)
 def create(request):
     context = {}
     form = CategoryForm(request.POST or None)
@@ -20,7 +22,7 @@ def create(request):
     context['form'] = form
     return render(request, 'categories/create.html', context)
 
-
+@login_required
 def list(request):
     context = {}
     datas = Category.objects.filter(is_deleted=False)
@@ -28,7 +30,8 @@ def list(request):
     context['datas'] = datas
     return render(request, 'categories/list.html', context)
 
-
+@login_required
+@permission_required('categories.change_category', raise_exception=True)
 def edit(request, slug):
     context = {}
     try:
@@ -48,7 +51,8 @@ def edit(request, slug):
     context['form'] = form
     return render(request, 'categories/create.html', context)
 
-
+@login_required
+@permission_required('categories.delete_category')
 def delete(request, slug):
     context = {}
     if request.method == 'POST':
@@ -82,7 +86,8 @@ def delete(request, slug):
 
     return render(request, 'snippets/delete.html', context)
 
-
+@login_required
+@permission_required('categories.delete_category')
 def undo(request, slug):
     context = {}
     if request.method == 'POST':
