@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="723cc4be-c8a2-4d59-8e7a-72e4e43d578f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/categories/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/categories/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/product_home.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/product_home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/tire/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/tyre/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/templates/products/tire/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/products/templates/products/tyre/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/products/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/products/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stocks/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/stocks/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/sidebar/_main_sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/sidebar/_main_sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bower.json" beforeDir="false" afterPath="$PROJECT_DIR$/bower.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -178,14 +169,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/categories/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+            <state relative-caret-position="270">
+              <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
               <folding>
                 <element signature="e#0#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bower.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -275,8 +284,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pages/views.py" />
-        <option value="$PROJECT_DIR$/pages/templates/pages/_customer_dashboard.html" />
         <option value="$PROJECT_DIR$/anushree/urls.py" />
         <option value="$PROJECT_DIR$/products/templates/products/tire/list.html" />
         <option value="$PROJECT_DIR$/products/templates/products/tube/list.html" />
@@ -326,8 +333,15 @@
         <option value="$PROJECT_DIR$/products/forms.py" />
         <option value="$PROJECT_DIR$/products/urls.py" />
         <option value="$PROJECT_DIR$/categories/forms.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/bower.json" />
       </list>
     </option>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="$PROJECT_DIR$/bower.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="1366" />
@@ -353,59 +367,13 @@
             <path>
               <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
               <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
               <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="categories" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="sliderimages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="sliderimages" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="sliderimages" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="sliderimages" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="sliderimages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="stocks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="anushree" type="b2602c69:ProjectViewProjectNode" />
-              <item name="anushree" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-              <item name="templatetags" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="bower_components" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -527,12 +495,12 @@
       <workItem from="1558969227404" duration="18000" />
       <workItem from="1559182689485" duration="2141000" />
       <workItem from="1559617682139" duration="2947000" />
-      <workItem from="1559647664979" duration="1190000" />
+      <workItem from="1559647664979" duration="2290000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209958000" />
+    <option name="totallyTimeSpent" value="211058000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -552,7 +520,7 @@
       <window_info id="Structure" order="2" sideWeight="0.5048544" weight="0.22651514" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" visible="true" weight="0.29058442" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.29058442" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -561,7 +529,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5007576" side_tool="true" weight="0.32736155" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.44174758" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.44155845" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.30406505" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -602,13 +570,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.env" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/sidebar/_main_sidebar.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/orders/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -847,9 +808,6 @@
           <caret line="222" column="6" selection-start-line="222" selection-start-column="6" selection-end-line="222" selection-end-column="6" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/products/api/views.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1114,11 +1072,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/categories/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="51" selection-start-line="19" selection-start-column="51" selection-end-line="19" selection-end-column="51" />
+        <state relative-caret-position="270">
+          <caret line="18" column="51" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
           <folding>
             <element signature="e#0#24#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
         </state>
       </provider>
     </entry>

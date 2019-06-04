@@ -1,5 +1,5 @@
 {
-  "name": "LibraryManagementSystem",
+  "name": "AnuShree",
   "description": "",
   "main": "index.js",
   "authors": [
@@ -21,6 +21,7 @@
     "select2": "^4.0",
     "chart.js": "^2.7.3",
     "air-datepicker": "^2.2.3",
-    "pdfmake": "^0.1.53"
+    "pdfmake": "^0.1.53",
+    "datatables.net": "^1.10.19"
   }
 }
