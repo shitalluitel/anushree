@@ -16,7 +16,6 @@ jwt_response_payload_handler = api_settings.JWT_RESPONSE_PAYLOAD_HANDLER
 User = get_user_model()
 
 
-
 class AuthAPIView(APIView):
     # permission_classes = [AnonPermissionOnly]
     permission_classes = []
