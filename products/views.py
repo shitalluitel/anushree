@@ -6,7 +6,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 
 from categories.models import Category
-from products.forms import TubeForm, TireForm, TubeEditForm
+from products.forms import TubeForm, TyreForm, TubeEditForm
 from products.models import Product
 
 
@@ -33,34 +33,34 @@ def tube_create(request):
 
 
 @permission_required('products.add_product', raise_exception=True)
-def tire_create(request):
+def tyre_create(request):
     context = {}
-    form = TireForm(request.POST or None)
+    form = TyreForm(request.POST or None)
     if request.method == "POST":
         if form.is_valid():
             try:
-                category = Category.objects.get(name__icontains='tire', is_deleted=False)
+                category = Category.objects.get(name__icontains='tyre', is_deleted=False)
             except Category.DoesNotExist as e:
                 messages.warning(request, str(e))
-                return render(request, 'products/tire/create.html', context)
+                return render(request, 'products/tyre/create.html', context)
 
-            tire = form.save(commit=False)
-            tire.category = category
-            tire.save()
+            tyre = form.save(commit=False)
+            tyre.category = category
+            tyre.save()
 
-            messages.success(request, "Successfully created Tire product.")
+            messages.success(request, "Successfully created Tyre product.")
             # return redirect('')
 
     context['form'] = form
 
-    return render(request, 'products/tire/create.html', context)
+    return render(request, 'products/tyre/create.html', context)
 
 
 @login_required
-def tire_list(request):
+def tyre_list(request):
     context = {}
     user = request.user
-    datas = Product.objects.filter(category__name__icontains="tire", is_deleted=False)
+    datas = Product.objects.filter(category__name__icontains="tyre", is_deleted=False)
 
     category = datas.first().category.is_deleted
 
@@ -75,7 +75,7 @@ def tire_list(request):
             context['cart_item'] = items
     except Exception as e:
         print(e)
-    return render(request, 'products/tire/list.html', context)
+    return render(request, 'products/tyre/list.html', context)
 
 
 @login_required
@@ -121,25 +121,25 @@ def tube_edit(request, slug):
 
 
 @permission_required('products.change_product', raise_exception=True)
-def tire_edit(request, slug):
+def tyre_edit(request, slug):
     context = {}
 
     try:
-        data = Product.objects.get(slug=slug, category__name__icontains='tire')
+        data = Product.objects.get(slug=slug, category__name__icontains='tyre')
     except Product.DoesNotExist as e:
         messages.error(request, str(e))
-        return redirect('products:tire_list')
+        return redirect('products:tyre_list')
 
-    form = TireForm(request.POST or None, instance=data)
+    form = TyreForm(request.POST or None, instance=data)
     if request.method == "POST":
         if form.is_valid():
             form.save()
 
-            messages.success(request, "Successfully updated Tire product.")
-            return redirect('products:tire_list')
+            messages.success(request, "Successfully updated Tyre product.")
+            return redirect('products:tyre_list')
 
     context['form'] = form
-    return render(request, 'products/tire/create.html', context)
+    return render(request, 'products/tyre/create.html', context)
 
 
 @permission_required('products.delete_product', raise_exception=True)
@@ -171,11 +171,11 @@ def tube_delete(request, slug):
 
 
 @permission_required('products.delete_product', raise_exception=True)
-def tire_delete(request, slug):
+def tyre_delete(request, slug):
     context = {}
     if request.method == "POST":
         try:
-            data = Product.objects.get(slug=slug, category__name__icontains='tire')
+            data = Product.objects.get(slug=slug, category__name__icontains='tyre')
             if data.is_deleted:
                 data.delete()
                 messages.success(request, 'This data has been deleted permanently.')
@@ -185,14 +185,14 @@ def tire_delete(request, slug):
                 data.save()
                 messages.success(request, 'This data has been deleted.')
 
-                return redirect('products:tire_list')
+                return redirect('products:tyre_list')
 
         except Product.DoesNotExist as e:
             messages.error(request, str(e))
-            return redirect('products:tire_list')
+            return redirect('products:tyre_list')
 
-    context['next'] = reverse('archive:tire_archive')
-    context['page_name'] = "Product Tire"
+    context['next'] = reverse('archive:tyre_archive')
+    context['page_name'] = "Product Tyre"
     context['message'] = "Do you want to delete this data? It may be lost permanently."
     context['status'] = 'Delete'
 
@@ -225,24 +225,24 @@ def tube_undo(request, slug):
 
 
 @permission_required('products.delete_product', raise_exception=True)
-def tire_undo(request, slug):
+def tyre_undo(request, slug):
     context = {}
     if request.method == "POST":
         try:
-            data = Product.objects.get(slug=slug, category__name__icontains='tire')
+            data = Product.objects.get(slug=slug, category__name__icontains='tyre')
 
             data.is_deleted = False
             data.save()
             messages.success(request, 'This data has been restored.')
 
-            return redirect('archive:tire_archive')
+            return redirect('archive:tyre_archive')
 
         except Product.DoesNotExist as e:
             messages.error(request, str(e))
-            return redirect('archive:tire_archive')
+            return redirect('archive:tyre_archive')
 
-    context['next'] = reverse('archive:tire_archive')
-    context['page_name'] = "Product Tire"
+    context['next'] = reverse('archive:tyre_archive')
+    context['page_name'] = "Product Tyre"
     context['message'] = "Do you want to undo this data?"
     context['status'] = 'Undo'
 

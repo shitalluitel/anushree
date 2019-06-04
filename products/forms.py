@@ -35,7 +35,7 @@ class TubeForm(forms.ModelForm):
         #     self.fields['category'].queryset = Category.objects.filter(is_deleted=False)
 
 
-class TireForm(forms.ModelForm):
+class TyreForm(forms.ModelForm):
     class Meta:
         model = Product
 
@@ -88,7 +88,7 @@ class TubeEditForm(forms.ModelForm):
         #     self.fields['category'].queryset = Category.objects.filter(is_deleted=False)
 
 
-class TireEditForm(forms.ModelForm):
+class TyreEditForm(forms.ModelForm):
     class Meta:
         model = Product
 

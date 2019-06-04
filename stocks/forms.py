@@ -4,7 +4,7 @@ from products.models import Product
 from stocks.models import Stock
 
 
-class TireStockForm(forms.ModelForm):
+class TyreStockForm(forms.ModelForm):
     class Meta:
         model = Stock
 
@@ -26,10 +26,10 @@ class TireStockForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
-        self.fields['item'].queryset = Product.objects.filter(category__name__icontains='tire', is_deleted=False)
+        self.fields['item'].queryset = Product.objects.filter(category__name__icontains='tyre', is_deleted=False)
 
 
-class TubeStockForm(TireStockForm):
+class TubeStockForm(TyreStockForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

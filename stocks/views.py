@@ -4,14 +4,14 @@ from django.shortcuts import render, redirect
 
 # Create your views here.
 from anushree.decorators import group_required
-from stocks.forms import TireStockForm, TubeStockForm
+from stocks.forms import TyreStockForm, TubeStockForm
 from stocks.models import Stock
 
 
 @group_required('admin', raise_exception=True)
-def add_tire_stock(request):
+def add_tyre_stock(request):
     context = {}
-    form = TireStockForm(request.POST or None)
+    form = TyreStockForm(request.POST or None)
 
     if request.method == 'POST':
         if form.is_valid():
@@ -26,14 +26,14 @@ def add_tire_stock(request):
 
                     item.stock += stock.quantity
                     item.save()
-                    return redirect('stocks:add_tire_stock')
+                    return redirect('stocks:add_tyre_stock')
             except IntegrityError as e:
                 print(e)
                 messages.error(request, str(e))
                 return render()
 
     context['form'] = form
-    return render(request, 'stocks/tire_create.html', context)
+    return render(request, 'stocks/tyre_create.html', context)
 
 
 @group_required('admin', raise_exception=True)
@@ -76,13 +76,13 @@ def list_tube_stock(request):
 
 
 @group_required('admin', raise_exception=True)
-def list_tire_stock(request):
+def list_tyre_stock(request):
     context = {}
 
-    datas = Stock.objects.filter(item__category__name__icontains="tire")
+    datas = Stock.objects.filter(item__category__name__icontains="tyre")
 
     context['datas'] = datas
-    context['category'] = "Tire"
+    context['category'] = "Tyre"
     return render(request, 'stocks/history_list.html', context)
 
 
