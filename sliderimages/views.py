@@ -15,7 +15,7 @@ def create_slider_image(request):
 
     if request.method == 'POST':
         if form.is_valid():
-            # form.save()
+            form.save()
 
             messages.success(request, 'Successfully created slider image.')
             return redirect('sliderimages:create')
